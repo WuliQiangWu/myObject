@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width:800px;
+            height:auto;
+            margin: 0 auto;
+        }
+        .l{
+            width:100px;
+            height:500px;
+            float: left;
+        }
+        ul{
+            width:100px;
+            height:auto;
+            border:1px solid #c0c0c0;
+            box-sizing: border-box;
+            padding:0 5px;
+        }
+        li{
+            border-bottom:1px solid #c0c0c0;
+            height:50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        li:nth-child(5){
+            border-bottom: none;
+        }
+        .r{
+            width:500px;
+            height:500px;
+            float: left;
+            margin-left: 50px;
+            background: #00c000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="l">
+        <ul>
+            <li>导航1</li>
+            <li>导航2</li>
+            <li>导航3</li>
+            <li>导航4</li>
+            <li>导航5</li>
+        </ul>
+    </div>
+    <div class="r"></div>
+</div>
+
+    <script>
+        var oLi = document.getElementsByTagName('li');
+        var len = oLi.length;
+        for(var i=0;i<len;i++){
+            oLi[i].onClick = function(){
+                var iNow = oLi[i].index();
+                alert(iNow);
+            }
+        }
+
+    </script>
+</body>
+</html>

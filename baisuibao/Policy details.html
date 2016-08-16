@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <title>Policy details</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #policy-wrap{
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+            width:100%;
+            height:5.1rem;
+            background: url(images/policy-bg.png) no-repeat 0 -0.17rem ;
+            background-size: cover;
+            padding:0.16rem 0.2rem;
+            box-sizing: border-box;
+        }
+        #policy-img{
+            width:100%;
+            height:1rem;
+            border-radius: 0.1rem;
+            background:url(images/policy-img.png) no-repeat  0 center;
+            background-size: cover;
+        }
+        #policy-list p{
+            display: flex;
+            font-size: 0.12rem;
+            margin-top: 0.13rem;
+            min-height: 0.14rem;
+        }
+        #policy-list{
+            padding:0.03rem 0 0 0.35rem;
+            width:100%;
+            box-sizing: border-box;
+            height:auto;
+        }
+        #policy-list .l{
+            display: inline-block;
+            font-weight: bold;
+            width:0.8rem;
+            text-align:justify;
+            word-spacing: -0.4em;
+            height:0.14rem;
+        }
+        #policy-list p:nth-child(4) .l{
+            height:0.28rem;
+        }
+        #policy-list p:nth-child(4) .r{
+           margin-top: 0.16rem;
+        }
+        #policy-list .l::after{
+            display:inline-block;
+            content:'';
+            width:100%;height:0;
+        }
+        #policy-list .l i{
+            height:0.14rem;
+            font-style:inherit;
+            display: block;
+            width:0.8rem;
+        }
+        #policy-list .l i:after{
+            display:inline-block;
+            content:'';
+            width:100%;height:0;
+        }
+        #policy-list .l i:nth-child(1){
+            text-align:justify;
+            width:84%;
+        }
+        #policy-list .l i:nth-child(1):after{
+            display:inline-block;
+            content:'';
+            width:100%;
+            height:0;
+        }
+        #policy-list .r{
+            -webkit-box-flex: 1;
+            padding-left: 0.07rem;
+            box-sizing: border-box;
+            display: inline-block;
+            width:auto;
+            height:0.14rem;
+            color: #333333;
+        }
+        #policy-logo{
+            width:100%;
+            height:0.22rem;
+            background: url(images/policy-logo.png) no-repeat center center;
+            box-sizing: border-box;
+            margin-top: 0.4rem;
+        }
+        #policy-phone{
+            margin-top: 0.11rem;
+            padding:0 0.52rem;
+            font-size: 0.15rem;
+            font-weight: bold;
+            color: #666;
+        }
+        #policy-phone a{
+            text-decoration: none;
+            color: #666;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="policy-wrap">
+        <div id="policy-img"></div>
+        <div id="policy-list">
+            <p><span class="l">保&nbsp;险&nbsp;单&nbsp;号：</span><span class="r">@Model.InsuranceNo</span></p>
+            <p><span class="l">保&nbsp;险&nbsp;名&nbsp;称：</span><span class="r">百岁保</span></p>
+            <p><span class="l">投&nbsp;保&nbsp;人&nbsp;姓&nbsp;名：</span><span class="r">@Model.UserName</span></p>
+            <p><span class="l"><i>投&nbsp;保&nbsp;人</i><i>身&nbsp;份&nbsp;证&nbsp;号&nbsp;码：</i></span><span class="r">@Model.UserIDCard</span></p>
+            <p><span class="l">手&nbsp;机&nbsp;号&nbsp;码：</span><span class="r">@Model.UserPhone</span></p>
+            <p><span class="l">电&nbsp;子&nbsp;邮&nbsp;箱：</span><span class="r">@Model.UserEmail</span></p>
+            <p><span class="l">百&nbsp;岁&nbsp;祝&nbsp;福&nbsp;金：</span><span class="r">@Model.Money</span></p>
+            <p><span class="l">投&nbsp;保&nbsp;类&nbsp;型：</span><span class="r">自购</span></p>
+            <p><span class="l">生&nbsp;效&nbsp;日&nbsp;期：</span><span class="r">@Model.StartTime</span></p>
+
+        </div>
+        <div id="policy-logo"></div>
+        <div id="policy-phone">
+            <span>客服电话:</span>
+            <a href="tel:">4008-500-365</a>
+        </div>
+    </div>
+</body>
+</html>
