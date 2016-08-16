@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <title>Policy confirmation</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #policy-confirmation{
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+            width:3.2rem;
+            min-height:5.2rem;
+            background:
+                    url(images/confirmation-bg-top.png) no-repeat 0 top,
+                    url(images/confirmation-bg-bottom.png) no-repeat 0 bottom,
+                    url(images/confirmation-bg-center.png) repeat-y 0 0.65rem;
+            background-size: contain;
+            padding:0 0 0.4rem 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #policy-img{
+            width:90%;
+            margin:0.2rem auto 0 auto;
+            height:1rem;
+            border-radius: 0.1rem;
+            background:urlimages/policy-img.png) no-repeat  0 center;
+            background-size: cover;
+
+        }
+        #policy-logistic{
+            width:100%;
+            /*height:3.22rem;*/
+            padding:0 0 0 0.53rem;
+            box-sizing: border-box;
+
+        }
+        #logistic li{
+            font-size: 0.12rem;
+            list-style: none;
+            margin-top: 0.13rem;
+            width:100%;
+            display: flex;
+            height:0.14rem;
+
+        }
+        #logistic{
+            padding:0.03rem 0 0 0;
+            height:1.38rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        #logistic .logistic-left{
+            display: inline-block;
+            width:0.8rem;
+            height:auto;
+            text-align:justify;
+            word-spacing: -0.4em;
+        }
+        #logistic .logistic-left::after{
+            display:inline-block;
+            content:'';
+            width:100%;height:0;
+        }
+        #logistic .logistic-right{
+            padding-left: 0.07rem;
+            box-sizing: border-box;
+            display: inline-block;
+            width:auto;
+            height:auto;
+            color: #333333;
+        }
+        #w_message{
+            width:100%;
+            height:0.4rem;
+            line-height: 0.4rem;
+            font-size: 0.15rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        #w_information{
+            width:100%;
+            height:auto;
+        }
+        #w_information li{
+            position: relative;
+            padding-right: 0.33rem;
+            box-sizing: border-box;
+            list-style:none;
+            font-size: 0.12rem;
+            /*height:0.72rem;*/
+            padding-top:0.1rem ;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        #w_information span{
+            display: block;
+            margin-bottom: 0.1rem;
+
+        }
+        #w_information i{
+            font-style: inherit;
+            color: #eb6100;
+        }
+    </style>
+</head>
+<body>
+<div id="policy-confirmation">
+    <div id="policy-img"></div>
+    <div id="policy-logistic">
+        <div id="logistic">
+            <ul>
+                <li><span class="logistic-left">物流状态：</span><span class="logistic-right">已发货</span></li>
+                <li><span class="logistic-left">承运来源：</span><span class="logistic-right">圆通</span></li>
+                <li><span class="logistic-left">订单编号：</span><span class="logistic-right">976688559</span></li>
+                <li><span class="logistic-left">官方电话：</span><span class="logistic-right"></span>1976363</li>
+            </ul>
+        </div>
+        <div id="w_message">
+            物流信息
+        </div>
+        <div id="w_information">
+            <ul>
+                <li>
+                    <span><i>客户签收人：</i>申蒙蒙已经签收，感谢使用圆通速度，期待再次为您服务</span>
+                    <span>2016-03-08&nbsp;&nbsp;15:34</span>
+                </li>
+                <li>
+                    <span>北京市朝阳区望京公司王伟派递中，派件员电话18001225028</span>
+                    <span>2016-03-08&nbsp;&nbsp;15:34</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="font-size:100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+
+        }
+
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <title>Title</title>
+    <Style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+        }
+        #index_wrap{
+            padding-bottom: 0.8rem;
+            position: relative;
+            width:100%;
+            min-height:5.2rem;
+            background: url(images/indexbg.png) no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .slip{
+            background: #ffffff;
+            margin-top: 0.15rem;
+            width:100%;
+            height:1.86rem;
+            padding:0 16px;
+            box-sizing: border-box;
+        }
+        .slip .shuzi{
+            width:100%;
+            height:0.31rem;
+            line-height: 0.31rem;
+            color: #999;
+            font-size: 0.12rem;
+            font-weight: bold;
+            letter-spacing: 0.03rem;
+        }
+        .slip .detials{
+            height:1rem;
+            width: 100%;
+            padding:0.1rem 0;
+            box-sizing: border-box;
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .slip .detials dt{
+            float: left;
+            width:0.8rem;
+            height:0.8rem;
+            border-radius: 5px;
+            background: url(images/index_pic.png) no-repeat 0 0;
+            background-size: cover;
+            margin-right: 0.15rem;
+        }
+        .slip .detials dd{
+            box-sizing: border-box;
+            float: left;
+            height:0.8rem;
+            width:1.83rem;
+            padding:0.1rem 0;
+        }
+        .slip .detials dd span{
+            display:block ;
+            height:0.12rem;
+            font-size: 0.12rem;
+            color: #b5b5b5;
+            margin-bottom: 0.1rem;
+            font-weight: bold;
+        }
+        .slip .detials dd span:nth-child(1){
+
+            height:0.13rem;
+            font-size: 0.13rem;
+            color: #666;
+        }
+        .slip .btns{
+            height:0.55rem;
+            width:100%;
+            padding:0.1rem 0.07rem;
+            box-sizing: border-box;
+        }
+        .btns a,
+        .cansee a{
+            outline: none;
+            text-decoration: none;
+            font-size: 0.15rem;
+            display: inline-block;
+            height:0.35rem;
+            line-height: 0.35rem;
+            text-align: center;
+            background: #eb6100;
+            color: #ffffff;
+           border-radius: .2rem;
+        }
+        .slip .btns a:nth-child(1){
+            width:1.21rem;
+            float: left;
+        }
+        .slip .btns a:nth-child(2){
+            width:1.21rem;
+            float: right;
+        }
+        .cansee{
+            position: absolute;
+            width: 100%;
+            height:0.35rem;
+            padding:0 0.34rem;
+            box-sizing: border-box;
+            bottom:0.25rem;
+        }
+        .cansee a{
+            float: left;
+            width:100%;
+        }
+        .mesk {
+            background: url(images/mask.png) no-repeat top center;
+            position: fixed;
+            top: 0px;
+            background-size: 120%;
+            z-index: 111;
+            width: 100%;
+            height: 100%;
+        }
+    </Style>
+</head>
+<body>
+    <div id="index_wrap">
+
+        <div class="slip">
+            <div class="shuzi">
+                <span>保险单号：</span>
+                <span>127235511111</span>
+            </div>
+            <dl class="detials">
+                <dt></dt>
+                <dd>
+                    <span>申蒙蒙的百岁保</span>
+                    <span>生效时间：2016年3月12日</span>
+                    <span>赠送人：王亚楠</span>
+                </dd>
+            </dl>
+            <div class="btns">
+                <a href="javascript:">物流信息</a>
+                <a href="javascript:">保单详情</a>
+            </div>
+        </div>
+        <div class="slip">
+            <div class="shuzi">
+                <span>保险单号：</span>
+                <span>127235511111</span>
+            </div>
+            <dl class="detials">
+                <dt></dt>
+                <dd>
+                    <span>申蒙蒙的百岁保</span>
+                    <span>生效时间：2016年3月12日</span>
+                    <span>赠送人：王亚楠</span>
+                </dd>
+            </dl>
+            <div class="btns">
+                <a href="javascript:">物流信息</a>
+                <a href="javascript:">保单详情</a>
+            </div>
+        </div>
+        <div class="cansee">
+                <a href="javascript:">保存收藏&nbsp;随时查看</a>
+        </div>
+    </div>
+    <div class="mesk" style="display:none">
+        <a id="btnClose" class="btnBack" href="javascript:"><img src="http://demo.cdn.roseone.net/baisui/Content/images/close-2.png" /></a>
+    </div>
+</body>
+</html>

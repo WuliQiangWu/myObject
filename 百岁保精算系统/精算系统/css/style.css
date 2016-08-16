@@ -1,0 +1,416 @@
+
+body,.header,span,input,p{
+    margin: 0;
+    padding:0;
+    font-family: "微软雅黑";
+}
+ul,li{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+body{
+    background: url(../img/bg.png) no-repeat;
+    background-size: cover;
+}
+.header{
+    width: 100%;
+    height:52px;
+    background: #161616;
+    overflow: hidden;
+}
+.header span{
+    display: block;
+    margin-left: 23%;
+    margin-top: 15px;
+    color: #FFFFFF;
+    font-size: 19px;
+}
+/*第一个页面*/
+.section01{
+    width:595px;
+    height:535px;
+    border:3px dashed #FFFFFF;
+    margin:64px auto;
+    box-sizing: border-box;
+    padding:22px 116px;
+}
+.section01 input{
+    width:100%;
+    height:43px;
+    border:none;
+    outline: none;
+    font-size: 17px;
+    color: #000000;
+    padding:13px 17px;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+}
+.section01 button{
+    width:100%;
+    height:43px;
+    border:none;
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    line-height: 43px;
+    text-align: center;
+    background-color: #ff7e00;
+    background-image:url(../img/search.png) ;
+    background-repeat: no-repeat;
+    background-position: 125px center;
+}
+.section01 button:active{
+    width:100%;
+    height:43px;
+    border:none;
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    line-height: 43px;
+    text-align: center;
+    background-color: #ff7e00;
+    background-image:url(../img/search.png) ;
+    background-repeat: no-repeat;
+    background-position: 125px center;
+}
+.section01 .chance{
+    position: relative;
+    width:100%;
+    height:43px;
+    border:none;
+    outline: none;
+    font-size: 17px;
+    color: #000000;
+    line-height: 43px;
+    padding-left: 17px;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+    background-color: #FFFFFF;
+}
+
+.section01 .select1{
+    z-index: 500;
+    position: relative;
+    width:100%;
+    height:43px;
+    border:none;
+    outline: none;
+    font-size: 17px;
+    color: #000000;
+
+    box-sizing: border-box;
+    margin-bottom: 18px;
+    background: #ffffff;
+
+}
+/*第二个页面*/
+.section02{
+    width:595px;
+    height:535px;
+    background: #FFFFFF;
+    margin:64px auto;
+    box-sizing: border-box;
+    padding:12px;
+}
+.section02 table{
+    width:571px;
+    height:450px;
+    border-collapse: collapse;
+    border-color: #bcbcbc;
+    color: #a3a3a3;
+}
+.section02 table tr th{
+    background-color: #277581;
+    border-color: #277581;
+    width:168px;
+    height:30px;
+    color: #f6f8f9;
+    font-size:15px;
+}
+.section02 table tr td{
+    text-align: center;
+    line-height: 26px;
+    width:168px;
+    height:26px;
+    border-color: #bcbcbc;
+}
+.section02 a{
+    display: block;
+    font-size: 13px;
+    height:17px;
+    width:75px;
+    text-decoration: underline;
+    color: #3e7f8a;
+    margin: 16px auto;
+    cursor: pointer;
+}
+/*第三个页面*/
+.section03{
+    width:1158px;
+    height:auto;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    margin: 65px auto;
+    background: #ffffff;
+}
+.section03 div{
+    padding:15px 25px;
+    height:34px;
+    overflow:hidden;
+}
+.section03 button{
+    float: left;
+    width:121px;
+    height:34px;
+    border:none;
+    outline: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    line-height: 34px;
+    text-align: center;
+    background-color: #ff7e00;
+    background-image:url(../img/search.png) ;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.section03 span{
+    display: inline-block;
+    margin-right:8px;
+    float:left;
+    box-sizing: border-box;
+    padding-left:13px;
+    height:34px;
+    line-height: 34px;
+}
+.section03 table{
+    margin:0 26px;
+    width:1100px;
+    height:auto;
+    border-collapse: collapse;
+    border-color: #bcbcbc;
+    color: #a3a3a3;
+}
+.section03 table tr th{
+    background-color: #277581;
+    border-color: #277581;
+    width:130px;
+    height:30px;
+    color: #f6f8f9;
+    font-size:15px;
+}
+.section03 table tr td{
+    text-align: center;
+    line-height: 26px;
+    width:130px;
+    height:26px;
+    border-color: #bcbcbc;
+}
+.section03 a{
+    font-weight: bold;
+    display: block;
+    font-size: 13px;
+    height:17px;
+    width:75px;
+    text-decoration: none;
+    color: #000000;
+    margin: 16px auto;
+    cursor: pointer;
+}
+
+/*第一页的按钮*/
+.checkbox {
+    box-sizing: border-box;
+    padding-top: 10px;
+    right:24px;
+    top:0px;
+    line-height:34px ;
+    display: inline-block;
+    position: absolute;
+}
+.checkbox:after, .checkbox:before {
+    font-family: FontAwesome;
+    -webkit-font-feature-settings: normal;
+    -moz-font-feature-settings: normal;
+    font-feature-settings: normal;
+    -webkit-font-kerning: auto;
+    -moz-font-kerning: auto;
+    font-kerning: auto;
+    -webkit-font-language-override: normal;
+    -moz-font-language-override: normal;
+    font-language-override: normal;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    text-rendering: auto;
+}
+.checkbox label {
+    width: 40px;
+    height: 25px;
+    background: #ccc;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.checkbox label:after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    left: 0;
+    top: -5px;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.checkbox input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkbox input:hover + label:after {
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.checkbox input:checked + label:after {
+    left: 40px;
+}
+.model-2 .checkbox label {
+    width: 40px;
+}
+.model-2 .checkbox label:after {
+    top: 0;
+    width: 25px;
+    height: 25px;
+}
+.model-2 .checkbox input:checked + label {
+    background: #00c000;
+}
+.model-2 .checkbox input:checked + label:after {
+    left: 20px;
+}
+/*下拉列表*/
+#all{
+    cursor:pointer;
+    float:left;
+    width:100%;
+}
+.select{
+    float:left;
+    width:100%; height:43px;
+    box-sizing: border-box;
+    line-height:43px;
+    position:relative;
+    background: #fff;
+}
+
+.select p{
+    float: left;
+    height:43px; padding-left:17px;
+    line-height: 43px; font-size:17px;
+    color:#000; display:inline-block;
+}
+.icon{
+    display: inline-block;
+    width:12px; height:7px;
+    float:right;
+    margin-top:20px; margin-right:11px;
+    background-image: url(../img/Shape-2-copy-8@2x.png);
+}
+.iconchange{
+    background-image: url(../img/Shape-2-copy-4@2x.png);
+}
+.list{
+    position:absolute;
+    width:100%; height:auto;
+    box-sizing: border-box;
+    background:#85cfda ;
+    left:0; top:43px;
+    display:none;
+}
+.list li{
+    background:#85cfda;
+    cursor:pointer;
+    height:43px;
+    box-sizing: border-box;
+    padding-left: 17px;
+    border-top:1px solid #000;
+    font-size:17px; color:#000;
+    line-height: 43px;
+
+}
+.list li.first{
+    border-top:none;
+    /*margin-top: 16px;*/
+    /*border-top:none;*/
+}
+.list li.last{
+    border-bottom:none;
+}
+
+/*第2-1的页面*/
+.section04{
+    width:595px;
+    height:200px;
+    background: #FFFFFF;
+    margin:200px auto;
+    box-sizing: border-box;
+    padding:15px 10px;
+}
+.section04 table{
+    width:574px;
+    height:170px;
+    border-collapse: collapse;
+    border-color: #bcbcbc;
+    color: #a3a3a3;
+}
+.section04 table tr th{
+    background-color: #277581;
+    border-color: #277581;
+    height:28px;
+    line-height: 28px;
+    color: #f6f8f9;
+    font-size:15px;
+}
+.section04 table tr th:nth-child(1){
+    width:160px;
+}
+.section04 table tr th:nth-child(2){
+    width:220px;
+}
+.section04 table tr th:nth-child(3){
+    width:195px;
+}
+.section04 table tr td{
+    color: #000;
+    text-align: center;
+    line-height: 68px;
+    width:168px;
+    height:68px;
+    border-color: #bcbcbc;
+}
+.section04 a{
+
+    font-size: 13px;
+    height:17px;
+    width:75px;
+    text-decoration: underline;
+    color: #3e7f8a;
+    cursor: pointer;
+}

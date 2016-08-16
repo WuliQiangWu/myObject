@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+            height:100%;
+            width:100%;
+        }
+        body{
+            margin:0;
+            padding:0;
+            background: #40403e;
+        }
+        #wj_wrapper{
+            background: #40403e;
+            height: 4.54rem;
+            display: -webkit-box;
+            display: -moz-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -moz-box-orient:vertical;
+            box-orient: vertical;
+        }
+
+        .wj_image{
+             width:89%;
+             height:4.54rem;
+             background: #ffffff;
+             margin:0 auto;
+             overflow: hidden;
+             position: relative;
+         }
+        .wj_image .wj_dingwei{
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 100;
+            left:10%
+        }
+        .wj_go02{
+            margin-top: 0.03rem;
+            top:4.6rem;
+            left:0;
+            height: 0.34rem;
+            width: 100%;
+            position: absolute;
+            font-size: 0.14rem;
+        }
+        .wj_left{
+            height: 100%;
+            position: absolute;
+            left: 0.25rem;
+            line-height:0.3rem;
+            width: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            background: #f60;
+            border-radius: 0.20rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        .wj_right{
+            height: 100%;
+            position: absolute;
+            right: 0.25rem;
+            line-height: 0.34rem;
+            width: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            background: #f60;
+            border-radius: 0.2rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        .wj_activate{
+            position: absolute;
+            width:100%;
+            font-size:0.14rem;
+            display: block;
+            margin: 0 auto;
+            bottom: 0.15rem;
+            text-align: center;
+            text-decoration: none;
+            background: #ff9850;
+            border-radius: 0.2rem;
+            color: #fff;
+            font-weight: bold;
+            line-height: 0.34rem;
+        }
+        .wj_dingwei .wj_icon-wrap{
+            background: #fff;
+            position: absolute;
+            bottom: 0.59rem;
+            width: 100%;
+            height: 0.34rem;
+            border: 1px solid #FF6600;
+            border-radius: 0.2rem;
+            line-height:0.34rem;
+        }
+        .wj_icon-wrap i{
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            width:0.38rem;
+            height:100%;
+            background: #f60;
+            background:url(images/lb.png) no-repeat center center,
+                        url(images/can.png) no-repeat right 5px;;
+        }
+        .wj_icon-wrap i.luyin_play{
+
+            background:url(images/luyin_play.gif) no-repeat center center;
+        }
+        .wj_seconds{
+            position: absolute;
+            left: 0.5rem;
+            font-weight: bold;
+            font-size: 0.13rem;
+            color: #FF6600;
+        }
+
+        .wj_swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .wj_swiper-slide {
+            height:100%;
+            text-align: center;
+            font-size: 0.18rem;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+       .wj_swiper-slide img{
+           width:101%;
+
+       }
+    </style>
+</head>
+<body>
+    <div id="wj_wrapper">
+            <div class="wj_image">
+                <div class=" swiper-container wj_swiper-container">
+                    <div class="wj_dingwei">
+                        <div class="wj_icon-wrap">
+                            <i  id="wj_play02" ></i>
+                            <span class="wj_seconds"></span>
+                        </div>
+                        <a class="wj_activate" href="javascript:">激活百岁保</a>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide wj_swiper-slide">
+                            <img src="images/bg1.png"/>
+                        </div>
+                        <div class="swiper-slide wj_swiper-slide">
+                            <img src="images/bg2.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wj_go02">
+                <a class="wj_left" href="javascript:">修改</a>
+                <a class="wj_right" href="javascript:">确认</a>
+            </div>
+    </div>
+    <script src="js/js-sdk.js"></script>
+    <script src="js/zepto.min.js"> </script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var oBtn = document.getElementsByTagName('a');
+        oBtn[1].addEventListener('click',function(){
+            location.href = ""});
+        oBtn[2].addEventListener('click',function(){
+            location.href = ""});
+        var oPlay = document.getElementById('wj_play02');
+
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            direction: 'vertical'
+        });
+        window.onload =function(){
+            wx.config({
+                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: '', // 必填，公众号的唯一标识
+                timestamp: 111, // 必填，生成签名的时间戳
+                nonceStr: '', // 必填，生成签名的随机串
+                signature: '',// 必填，签名，见附录1
+                jsApiList: ['translateVoice'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+
+            wx.ready(function(){
+//					oBtn.addEventListener('touchstart', function(event){
+//						event.preventDefault();//阻止默认事件
+//						START = new Date().getTime(); //先获取点击时距离1970.0.0 的毫秒数
+//
+//						recordTimer = setTimeout(function(){
+//							wx.startRecord({
+//								success: function(){
+//									localStorage.rainAllowRecord = 'true';
+//								},
+//								cancel: function () {
+//									alert('用户拒绝录音');
+//								}
+//							});
+//						},300);
+//					});
+//
+//					//松手结束录音
+//					oBtn.addEventListener('touchend', function(event){
+//
+//						event.preventDefault();//阻止默认事件
+//						END = new Date().getTime();//获取松开时时距离1970.0.0 的毫秒数
+//
+//						var _time = Math.ceil(parseInt((END - START)/1000))+'s';
+//
+//						if((END - START) < 300){ //用来判断点击的时间
+//							END = 0;
+//							START = 0;
+//							//小于300ms，不录音
+//							clearTimeout(recordTimer);
+//						}
+//						//手指上滑不录音
+//
+//						else{
+//							_out();
+//							wx.stopRecord({
+//								success: function (res) {
+//									localId = res.localId;
+//									uploadVoice();
+//
+//								},
+//								fail: function (res) {
+//									alert(JSON.stringify(res));
+//								}
+//							});
+//						}
+//						oSecond.innerHTML=_time;
+//					});
+//
+//					//上传录音
+//					function uploadVoice(){
+//						//调用微信的上传录音接口把本地录音先上传到微信的服务器
+//						//不过，微信只保留3天，而我们需要长期保存，我们需要把资源从微信服务器下载到自己的服务器
+//						wx.uploadVoice({
+//							localId: voice.localId, // 需要上传的音频的本地ID，由stopRecord接口获得
+//							isShowProgressTips: 1, // 默认为1，显示进度提示
+//							success: function (res) {
+//								//把录音在微信服务器上的id（res.serverId）发送到自己的服务器供下载。
+//								$.ajax({
+//									url: '',//后端处理上传录音的接口
+//									type: 'post',
+//									data: JSON.stringify(res),
+//									dataType: "json",
+//									success: function (data) {
+//										console.log('文件已经保存到XXX的服务器');
+//									},
+//									error: function (xhr, errorType, error) {
+//										console.log(error);
+//									}
+//								});
+//							}
+//						});
+//					}
+//
+//					//注册微信播放录音结束事件
+//					wx.onVoicePlayEnd({
+//						success: function (res) {
+//							stopWave();
+//						}
+//					});
+
+                //播放语音
+                oPlay.addEventListener('click',function(){
+                    wx.playVoice({ //播放语音接口
+                        localId: "" // 需要播放的音频的本地ID，由stopRecord接口获得
+                    });
+                },false)
+            });
+
+            //接口调用失败返回
+            wx.error(function(res){
+                console.log('default')
+            });
+        }
+
+    </script>
+</body>
+</html>

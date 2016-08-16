@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <title>Title</title>
+    <Style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #rechargeCard{
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+            padding-left: 0.15rem;
+            box-sizing: border-box;
+        }
+        #psdinput{
+            width:100%;
+            height:0.55rem;
+            border-bottom: 1px solid #cac9cb;
+            font-size: 0.14rem;
+            padding:0.1rem 0;
+            box-sizing: border-box;
+        }
+        .padinput-left{
+            float: left;
+            display: block;
+            height:0.3rem;
+            margin-right: 0.3rem;
+            line-height: 0.3rem;
+            color: #cac9cb;
+        }
+        .padinput-right{
+            font-size: 0.15rem;
+            float: left;
+            height:0.3rem;
+            border:none;
+            outline: none;
+            width:2rem;
+            background: #FFFFFF;
+        }
+        #psdinput-hint{
+            height:0.3rem;
+            line-height: 0.3rem;
+            width:100%;
+            color: #cac9cb;
+            font-size: 0.11rem;
+        }
+        #activeBtn{
+            text-decoration: none;
+            margin-top: 3.37rem;
+            margin-left: 0.12rem;
+            border-radius: 0.2rem;
+            display: block;
+            height:0.35rem;
+            width:2.68rem;
+            background: #eb6100;
+            color: #FFFFFF;
+            font-size: 0.16rem;
+            text-align: center;
+            line-height: 0.35rem;
+        }
+    </Style>
+</head>
+<body>
+    <div id="rechargeCard">
+        <div id="psdinput">
+            <span class="padinput-left">充值卡密码</span>
+            <input class="padinput-right" type="number"/>
+        </div>
+        <p id="psdinput-hint">*刮开二维码下方图层即可获取充值卡密码</p>
+        <a href="javascript:" id="activeBtn">
+            立即激活百岁保
+        </a>
+    </div>
+</body>
+</html>

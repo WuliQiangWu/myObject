@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <title>Policy details</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #policy-wrap{
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+            width:100%;
+            height:5.1rem;
+            background: url(images/policy-bg.png) no-repeat 0 -0.17rem ;
+            background-size: 100%;
+            padding:0.16rem 0.2rem;
+            box-sizing: border-box;
+        }
+        #policy-img{
+            width:100%;
+            height:1rem;
+            border-radius: 0.1rem;
+            background:url(images/policy-img.png) no-repeat  0 center;
+            background-size: cover;
+        }
+        #policy-list p{
+            display: flex;
+            font-size: 0.12rem;
+            margin-top: 0.14rem;
+            min-height: 0.14rem;
+        }
+        #policy-list{
+            padding:0.03rem 0 0 0.35rem;
+            width:100%;
+            box-sizing: border-box;
+            height:auto;
+        }
+        #policy-list .l{
+            display: inline-block;
+            width:0.8rem;
+            text-align:justify;
+            word-spacing: -0.4em;
+            height:0.14rem;
+        }
+        #policy-list p:nth-child(2) .l-two{
+            height:0.28rem;
+        }
+        #policy-list p:nth-child(2) .r-two{
+            margin-top: 0.16rem;
+        }
+        #policy-list .l::after{
+            display:inline-block;
+            content:'';
+            width:100%;height:0;
+        }
+        #policy-list .l i{
+            height:0.14rem;
+            font-style:inherit;
+            display: block;
+            width:0.8rem;
+        }
+        #policy-list .l i:after{
+            display:inline-block;
+            content:'';
+            width:100%;height:0;
+        }
+        #policy-list .l i:nth-child(1){
+            text-align:justify;
+            width:84%;
+        }
+        #policy-list .l i:nth-child(1):after{
+            display:inline-block;
+            content:'';
+            width:100%;
+            height:0;
+        }
+        #policy-list .r{
+            -webkit-box-flex: 1;
+            padding-left: 0.07rem;
+            box-sizing: border-box;
+            display: inline-block;
+            width:auto;
+            height:0.14rem;
+            color: #333333;
+        }
+        #entryBtn{
+            text-decoration: none;
+            width:2.68rem;
+            margin:1.25rem auto 0 auto;
+            display: block;
+            height:0.35rem;
+            font-size: 0.15rem;
+            line-height: 0.35rem;
+            border-radius: 0.2rem;
+            color: #FFFFFF;
+            background: #eb6100;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="policy-wrap">
+        <div id="policy-img"></div>
+        <div id="policy-list">
+
+            <p><span class="l">投&nbsp;保&nbsp;人&nbsp;姓&nbsp;名：</span><span class="r">@Model.UserName</span></p>
+            <p><span class="l-two"><i>投&nbsp;保&nbsp;人</i><i>身&nbsp;份&nbsp;证&nbsp;号&nbsp;码：</i></span><span class="r-two">@Model.UserIDCard</span></p>
+            <p><span class="l">手&nbsp;机&nbsp;号&nbsp;码：</span><span class="r">@Model.UserPhone</span></p>
+            <p><span class="l">电&nbsp;子&nbsp;邮&nbsp;箱：</span><span class="r">@Model.UserEmail</span></p>
+            <p><span class="l">百&nbsp;岁&nbsp;祝&nbsp;福&nbsp;金：</span><span class="r">@Model.Money</span></p>
+            <p><span class="l">赠&nbsp;送&nbsp;人：</span><span class="r">王亚楠</span></p>
+
+
+        </div>
+        <a href="javascript:" id="entryBtn">
+            输入充值卡密码
+        </a>
+    </div>
+</body>
+</html>

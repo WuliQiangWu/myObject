@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+   <Script>
+       function setFontSize(){
+           document.documentElement.style.fontSize=window.innerWidth*100/375+'px';
+       }
+       setFontSize();
+       window.addEventListener('resize',setFontSize,false);
+   </Script>
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wj_image{
+            width:100%;
+            height:6.67rem;
+            background: #ffffff;
+            margin:0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .wj_image .wj_dingwei{
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 100;
+            left:10%
+        }
+        .wj_activate{
+            font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+            height:0.35rem;
+            position: absolute;
+            width:100%;
+            font-size:0.15rem;
+            display: block;
+            margin: 0 auto;
+            top:92%;
+            text-align: center;
+            text-decoration: none;
+            background: #eb6100;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: bold;
+            line-height: 0.35rem;
+        }
+        .wj_dingwei .wj_icon-wrap{
+            position: relative;
+            top:85%;
+            background: #fff;
+            margin:0 auto;
+            width: 100%;
+            height: 0.34rem;
+            border: 1px solid #FF6600;
+            border-radius: 20px;
+            line-height:0.34rem;
+        }
+
+        .wj_icon-wrap i{
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            width:0.38rem;
+            height:100%;
+            background: #f60;
+            background:url(images/lb.png) no-repeat center center,
+                        url(images/can.png) no-repeat right 5px;;
+        }
+        .wj_icon-wrap i.luyin_play{
+
+            background:url(images/luyin_play.gif) no-repeat center center;
+        }
+        .wj_seconds{
+            position: absolute;
+            left: 0.5rem;
+            font-weight: bold;
+            font-size: 0.13rem;
+            color: #FF6600;
+        }
+
+        .wj_swiper-slide img{
+            width:114%;
+        }
+        .wj_span{
+            position: absolute;
+            top:30%;
+            left:0;
+            width:100%;
+            text-align: center;
+            font-size: 0.2rem;
+            font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;;
+        }
+        .wj_span span{
+            display:inline-block;
+        }
+        .wj_span .wj_name{
+            color: #eb6100;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+        <div class="wj_image">
+            <div class=" swiper-container wj_swiper-container">
+                <div class="wj_dingwei">
+                    <div class="wj_icon-wrap">
+                        <i  id="wj_play02" class="luyin_play"></i>
+                        <span class="wj_seconds"></span>
+                    </div>
+
+                    <a class="wj_activate" href="javascript:">激活百岁保</a>
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide wj_swiper-slide">
+                        <div class="wj_span">
+                            <span class="wj_name">申蒙蒙</span>
+                            <span>送您一份百岁保</span>
+                        </div>
+
+                        <img src="images/wj_active.png"/>
+                    </div>
+                    <div class="swiper-slide wj_swiper-slide">
+                        <img src="images/bg03.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="js/js-sdk.js"></script>
+    <script src="js/zepto.min.js"> </script>
+    <script src="js/swiper.min.js"></script>
+    <Script>
+
+
+
+        window.onload=function(){
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                direction: 'vertical'
+            });
+        }
+
+    </Script>
+</body>
+</html>
