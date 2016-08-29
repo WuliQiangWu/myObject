@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型模式</title>
+</head>
+<body>
+    <Script>
+        function Person(){
+        }
+        Person.prototype.name='nick';
+        Person.prototype.age='20';
+        Person.prototype.job='cook';
+        Person.prototype.sayName=function(){
+            alert(this.name)
+        };
+        var person = new Person();
+        person.sayName();
+        var person1 = new Person();
+        console.log(person1.name);
+    </Script>
+</body>
+</html>

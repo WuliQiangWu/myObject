@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,.header,span,input,p{
+            margin: 0;
+            padding:0;
+            font-family: "微软雅黑";
+        }
+        ul,li{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        html{
+            height:100%;
+        }
+        body{
+            height:100%;
+            min-height:902px;
+            background: url(images/index01.png) no-repeat;
+            background-size:cover;
+            background-position: center 50px;
+        }
+        .header{
+            box-sizing: border-box;
+            background: #161616;
+            color: #e3e3e3;
+            font-size: 20px;
+            height:51px;
+            line-height: 51px;
+            padding-left: 445px;
+            width:100%;
+        }
+        #section01{
+            width:385px;
+            height:610px;
+            margin:77px auto;
+
+        }
+        .on{
+            border:2px solid #ff6000;
+        }
+        .tabdiv{margin:0;
+            padding:15px;
+            width:100%;
+            border:2px solid #ff6000;
+            display:none;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            box-shadow: 2px 2px 2px  #c1c1a7 ,-2px -2px 2px  #c1c1a7;
+        }
+        .tab{
+            margin:0;
+            padding:0;
+            list-style:none;
+            width:200px;
+            overflow:hidden;
+        }
+        .tab li{
+            float:left;
+            width:90px;
+            height:45px;
+            background:#ccc;
+            color:#fff;
+            text-align:center;
+            line-height:45px;
+            cursor:pointer;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+        }
+        .on{
+            display:block
+        ;}
+        .tab li.cur{
+            background:#ff6000;
+        }
+        #section01 input{
+            background: #f2f2f2;
+            width:93%;
+            height:43px;
+            border:none;
+            outline: none;
+            font-size: 17px;
+            color: #000000;
+            padding:13px 17px;
+            box-sizing: border-box;
+
+        }
+        #section01 button{
+            border-radius: 5px;
+            width:60%;
+            height:43px;
+            border:none;
+            outline: none;
+            font:16px/34px verdana,"微软雅黑",serif;
+            letter-spacing: 3px;
+            color: #FFFFFF;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #ff6000;
+            background-image:url(images/search.png) ;
+            background-repeat: no-repeat;
+            background-position: 45px center;
+            cursor:pointer;
+            margin-left:70px;
+        }
+        #section01 .select1{
+            z-index: 500;
+            position: relative;
+            width:100%;
+            height:43px;
+            border:none;
+            outline: none;
+            font-size: 17px;
+            color: #000000;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+            background: #ffffff;
+
+        }
+        .all{
+            cursor:pointer;
+            float:left;
+            width:100%;
+        }
+        .select{
+            float:left;
+            width:100%; height:43px;
+            box-sizing: border-box;
+            line-height:43px;
+            position:relative;
+            background: #f2f2f2;
+        }
+
+        .select p{
+            float: left;
+            height:43px; padding-left:17px;
+            line-height: 43px; font-size:17px;
+            color:#000; display:inline-block;
+        }
+        .icon{
+            display: inline-block;
+            width:12px; height:7px;
+            float:right;
+            margin-top:20px; margin-right:11px;
+            background-image: url(images/Shape-2-copy-8@2x.png);
+        }
+        .iconchange{
+            background-image: url(images/Shape-2-copy-4@2x.png);
+        }
+        .list{
+            position:absolute;
+            width:100%; height:auto;
+            box-sizing: border-box;
+            background:#85cfda ;
+            left:0; top:43px;
+            display:none;
+        }
+        .list li{
+            background:#85cfda;
+            cursor:pointer;
+            height:43px;
+            box-sizing: border-box;
+            padding-left: 17px;
+            border-top:1px solid #000;
+            font-size:17px; color:#000;
+            line-height: 43px;
+
+        }
+        .list li.first{
+            border-top:none;
+            /*margin-top: 16px;*/
+            /*border-top:none;*/
+        }
+        .list li.last{
+            border-bottom:none;
+        }
+        .inp{
+            height:43px;
+            width:100%;
+            background: #f2f2f2;
+            margin-bottom: 18px;
+        }
+        .inp1{
+            background: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">保金生精算系统</header>
+    <div id="section01">
+        <!--<span id="font1"> </span>-->
+        <ul class="tab">
+            <li class="cur">等额</li>
+            <li>分段</li>
+        </ul>
+        <div class="on tabdiv">
+            <form>
+                <div class="inp"><input type="text" value="请输入收益利率%"/>%</div>
+                <div class="select1">
+                    <div class="all">
+                        <div class="select border">
+                            <p>男</p>
+                            <span class="icon"></span>
+                            <ul class="list">
+                                <li class="first">女</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="inp"><input type="text" value="投保金额"/>元</div>
+                <div class="inp"><input type="text" value="指定赔付年龄"/>岁</div>
+                <div class="inp inp1"><button>精算</button></div>
+            </form>
+        </div>
+        <div class="tabdiv">
+            <form>
+                <div class="inp"><input type="text" value="请输入收益利率%"/>%</div>
+                <div class="select1">
+                    <div class="all">
+                        <div class="select border">
+                            <p>男</p>
+                            <span class="icon"></span>
+                            <ul class="list">
+                                <li class="first">女</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="inp"><input type="text" value="投保金额"/>元</div>
+                <div class="inp"><input type="text" value="指定赔付年龄"/>岁</div>
+                <div class="inp"><input type="text" value="请输入70岁倍数"/>倍</div>
+                <div class="inp"><input type="text" value="请输入80岁倍数"/>倍</div>
+                <div class="inp"><input type="text" value="请输入90岁倍数"/>倍</div>
+                <div class="inp"><input type="text" value="请输入100岁倍数"/>倍</div>
+                <div class="inp inp1"><button>精算</button></div>
+            </form>
+
+        </div>
+    </div>
+    <!--<p id="font"></p>-->
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <Script>
+        $(document).ready(function(){
+            $(".tab li").click(function(){
+                $(".tab li").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+                $(".tabdiv").hide().eq($(this).index()).show();
+            })
+        });
+
+        function selectDown(select,icon,list){
+            function changeUp(){
+                $(list).slideUp();
+                $(icon).removeClass('iconchange');
+                $(select).css({backgroundColor:'#f2f2f2'});
+                $(select).addClass('border');
+                tf=false;
+            }
+            var tf=false;
+            $(select).on('click',function(){
+                tf=!tf;
+                if(tf){
+                    this.style.backgroundColor='#f2f2f2';
+                    $(list).slideDown();
+                    $(icon).addClass('iconchange');
+                    $(this).removeClass('border');
+                }else{
+                    this.style.backgroundColor='#f2f2f2';
+                    $(list).slideUp();
+                    $(icon).removeClass('iconchange');
+                    $(this).addClass('border');
+                }
+
+            });
+
+            var _p = $('.border p');
+            var aLi=$(list).children();
+            aLi.on('click',function(ev){
+                var value= _p.html();
+                var index=aLi.index(this);
+                var val=aLi.eq(index).html();
+                $('.select').children('p').html(val);
+                aLi.eq(index).html(value);
+                changeUp();
+                return false;
+            })
+        }
+        selectDown('.select','.icon','.list');
+
+        $(document).ready(function(){
+            $("input").focus(function(){
+                var input_txt=$(this).val();
+                if(input_txt==this.defaultValue){
+                    $(this).val("");
+                }
+            });
+            $('input').blur(function(){
+                var input_txt=$(this).val();
+                if(input_txt==""){
+                    $(this).val(this.defaultValue);
+                }
+            })
+        })
+    </Script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,.header,span,input,p{
+            margin: 0;
+            padding:0;
+            font-family: "微软雅黑";
+        }
+        ul,li{
+            list-style: none;
+        }
+        html{
+            height:100%;
+            width:100%;
+        }
+        body{
+            min-height:9.02rem;
+            background: url(images/index02-bg.png) no-repeat;
+            background-size:cover;
+            background-position: center 50px;
+        }
+        .header{
+            overflow: hidden;
+            box-sizing: border-box;
+            background: #161616;
+            color: #e3e3e3;
+            font-size: 20px;
+            height:51px;
+            line-height: 51px;
+            padding-left: 445px;
+            width:100%;
+        }
+        #section04{
+            background: rgba(250,247,248,0.8);
+            position: relative;
+            width:821px;
+            height:auto;
+            margin:120px auto 60px auto;
+            padding:27px 40px 33px 40px;
+            box-sizing: border-box;
+            border:2px solid #ff6600;
+        }
+        #term{
+            width:91%;
+            height:40px;
+            float: left;
+        }
+        #term .inp{
+            width:90px;
+            height:32px;
+            border:1px solid #e6e6e6;
+            background: #f2f2f2;
+            display: inline-block;
+        }
+        #term .inp b{
+            font-weight: 100;
+        }
+        #section04 .select1{
+            z-index: 500;
+            position: relative;
+            width:90px;
+            height:32px;
+            border:none;
+            outline: none;
+            font-size: 17px;
+            color: #000000;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+            background: #ffffff;
+
+        }
+        .all{
+            cursor:pointer;
+            float:left;
+            width:100%;
+        }
+        .select{
+            float:left;
+            width:100%; height:32px;
+            box-sizing: border-box;
+            line-height:32px;
+            position:relative;
+            background: #f2f2f2;
+        }
+
+        .select p{
+            float: left;
+            height:32px; padding-left:30px;
+            line-height: 32px; font-size:17px;
+            color:#000; display:inline-block;
+        }
+        .icon{
+            display: inline-block;
+            width:12px; height:7px;
+            float:right;
+            margin-top:15px; margin-right:11px;
+            background-image: url(images/Shape-2@2x.png);
+        }
+        .iconchange{
+            background-image: url(images/Shape-2-copy-4@2x.png);
+        }
+        .list{
+            position:absolute;
+            width:100%; height:auto;
+            box-sizing: border-box;
+            background:#85cfda ;
+            left:0; top:32px;
+            display:none;
+            margin:0;
+            padding:0;
+        }
+        .list li{
+            background:#85cfda;
+            cursor:pointer;
+            height:32px;
+            box-sizing: border-box;
+            border-top:1px solid #000;
+            font-size:17px; color:#000;
+            line-height: 32px;
+            margin-left: 30px;
+
+        }
+        .list li.first{
+            border-top:none;
+        }
+        #term .inp input{
+            padding-left: 5px;
+            width:60px;
+            height:100%;
+            outline:none;
+            border:none;
+            background: #f2f2f2;
+        }
+        #term .float-le{
+            float:left;
+            margin-right: 10px;
+        }
+        #term .icon01 button{
+            padding-left: 30px;
+            box-sizing: border-box;
+            font:16px/32px verdana,"微软雅黑",serif;
+            letter-spacing: 5px;
+            width:85px;
+            height:100%;
+            border:none;
+            outline: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            text-align: center;
+            background-color: #FF7F02;
+            background-image:url(images/search03.png) ;
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            cursor:pointer;
+        }
+        #term .float-le .tit{
+            display: inline-block;
+            height:100%;
+            line-height: 32px;
+            float: left;
+            margin-right: 3px;
+        }
+        #section04 .top{
+            width:100%;
+            height:60px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #bcbcbc;
+        }
+        #section04 .top .right{
+            float: left;
+            box-sizing: border-box;
+            font:16px/34px verdana,"微软雅黑",serif;
+            letter-spacing: 5px;
+            width:60px;
+            height:34px;
+            border:none;
+            outline: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            text-align: center;
+            background-color: #FF7F02;
+            cursor:pointer;
+        }
+        #echarts1,#echarts2,#echarts3,#echarts4{
+            width:100%;
+            height:400px;
+            margin-bottom: 30px;
+        }
+        #echarts1{
+            border-bottom: 1px solid #ccc;
+        }
+        #font{
+            width: 100%;
+            height:41px;
+            text-align: center;
+            background:url('images/font-02.png') no-repeat center center;
+            margin-bottom:20px;;
+        }
+        #font1{
+            position: absolute;
+            width:406px;
+            height:95px;
+            background: url(images/font01.png) no-repeat center center;
+            right:-250px;
+            top:-100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>保金生精算系统</span>
+    </div>
+    <div id="section04">
+        <span id="font1"></span>
+        <div class="top">
+            <form id="term">
+                <div class="float-le">
+                    <span class="tit">收益率</span>
+                    <div class="inp">
+                        <input type="text"/><b>%</b>
+                    </div>
+                </div>
+                <div class="float-le">
+                    <span class="tit">性别</span>
+                    <div class="select1 inp">
+                        <div class="all">
+                            <div class="select border">
+                                <p>男</p>
+                                <span class="icon"></span>
+                                <ul class="list">
+                                    <li class="first">女</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-le">
+                    <span class="tit">购买年龄</span>
+                    <div class="inp">
+                        <input type="text"/><b>岁</b>
+                    </div>
+                    <span>~</span>
+                    <div class="inp">
+                        <input type="text"/><b>岁</b>
+                    </div>
+                </div>
+                <div class="icon01 float-le">
+                    <button>查询</button>
+                </div>
+            </form>
+            <a class="right">
+                返回
+            </a>
+        </div>
+
+        <div id="charts">
+            <div id="echarts1"></div>
+            <div id="echarts2"></div>
+            <div id="echarts3"></div>
+            <div id="echarts4"></div>
+        </div>
+    </div>
+    <p id="font"></p>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script>
+        function selectDown(select,icon,list){
+            function changeUp(){
+                $(list).slideUp();
+                $(icon).removeClass('iconchange');
+                $(select).css({backgroundColor:'#f2f2f2'});
+                $(select).addClass('border');
+                tf=false;
+            }
+            var tf=false;
+            $(select).on('click',function(){
+                tf=!tf;
+                if(tf){
+                    this.style.backgroundColor='#f2f2f2';
+                    $(list).slideDown();
+                    $(icon).addClass('iconchange');
+                    $(this).removeClass('border');
+                }else{
+                    this.style.backgroundColor='#f2f2f2';
+                    $(list).slideUp();
+                    $(icon).removeClass('iconchange');
+                    $(this).addClass('border');
+                }
+
+            });
+
+            var _p = $('.border p');
+            var aLi=$(list).children();
+            aLi.on('click',function(ev){
+                var value= _p.html();
+                var index=aLi.index(this);
+                var val=aLi.eq(index).html();
+                $('.select').children('p').html(val);
+                aLi.eq(index).html(value);
+                changeUp();
+                return false;
+            })
+        }
+        selectDown('.select','.icon','.list');
+
+        var myChart1 = echarts.init(document.getElementById('echarts1'));
+        var option1 = {
+                    title: {
+                        text: '男性赔付表',
+                        left:'center',
+                        bottom:'bottom'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+
+
+                    xAxis: {
+                        name:'年龄',
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['0','5','10','15','20','25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','99']
+                    },
+                    yAxis: {
+                        name:'倍数',
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value} %'
+                        }
+                    },
+                    series: [
+                        {
+                            name:'赔付率',
+                            type:'line',
+                            itemStyle : {
+                                normal : {
+                                    color: '#bcbcbc',
+                                }},
+                            data:[0, 5, 10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,99]
+                        }
+                    ]
+                };
+        myChart1.setOption(option1);
+
+        var myChart2 = echarts.init(document.getElementById('echarts2'));
+        var option2 = {
+            title: {
+                text: '男性赔付表',
+                left:'center',
+                bottom:'bottom'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+
+
+            xAxis: {
+                name:'年龄',
+                type: 'category',
+                boundaryGap: false,
+                data: ['0','5','10','15','20','25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','99']
+            },
+            yAxis: {
+                name:'倍数',
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            series: [
+                {
+                    name:'赔付率',
+                    type:'line',
+                    itemStyle : {
+                        normal : {
+                            color: '#bcbcbc',
+                        }},
+                    data:[0, 5, 10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,99]
+                }
+            ]
+        };
+        myChart2.setOption(option2);
+
+        var myChart3 = echarts.init(document.getElementById('echarts3'));
+        var option3 = {
+            title: {
+                text: '男性赔付表',
+                left:'center',
+                bottom:'bottom'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+
+
+            xAxis: {
+                name:'年龄',
+                type: 'category',
+                boundaryGap: false,
+                data: ['0','5','10','15','20','25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','99']
+            },
+            yAxis: {
+                name:'倍数',
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            series: [
+                {
+                    name:'赔付率',
+                    type:'line',
+                    itemStyle : {
+                        normal : {
+                            color: '#bcbcbc',
+                        }},
+                    data:[0, 5, 10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,99]
+                }
+            ]
+        };
+        myChart3.setOption(option3);
+
+        var myChart4 = echarts.init(document.getElementById('echarts4'));
+        var option4 = {
+            title: {
+                text: '男性赔付表',
+                left:'center',
+                bottom:'bottom'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+
+
+            xAxis: {
+                name:'年龄',
+                type: 'category',
+                boundaryGap: false,
+                data: ['0','5','10','15','20','25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','99']
+            },
+            yAxis: {
+                name:'倍数',
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            series: [
+                {
+                    name:'赔付率',
+                    type:'line',
+                    itemStyle : {
+                        normal : {
+                            color: '#bcbcbc',
+                        }},
+                    data:[0, 5, 10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,99]
+                }
+            ]
+        };
+        myChart4.setOption(option4);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6.1理解对象</title>
+</head>
+<body>
+    <script>
+        //最早创建对象的方法
+        var person = new Object();
+        person.name='nick';
+        person.age='20';
+        person.job='actor';
+        person.sayName=function(){
+            alert(this.name);
+        }
+
+        //字面量创建对象
+        var person={
+            name:'nick',
+            age:'20',
+            job:'actor',
+            sayName:function(){
+                alert(this.name);
+            }
+        }
+    </script>
+</body>
+</html>

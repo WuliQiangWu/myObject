@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性类型</title>
+</head>
+<body>
+    <script>
+        var person={};
+        Object.defineProperty(person,name,{
+            writable:false, //不能修改此属性
+            value:'nick'
+        });
+        alert(person.name); //nick
+        person.name='hah';
+        alert(person.name);//nick
+
+        var person1={};
+        Object.defineProperty(person1,name,{
+            configurable:false, //不能删除此属性
+            name:'nick'
+        });
+        alert(person1.name); //nick
+        delete person1.name; //不会执行删除属性
+        alert(person1.name); //nick
+
+        var person2 ={};
+        Object.defineProperty(person2,name,{
+            configurable:false,
+            name:'nick'
+        });
+        //抛出错误
+        var person2 ={};
+        Object.defineProperty(person2,name,{
+            configurable:true,
+            name:'nick'
+        }); //一个属性可以多次调用Object.defineProperty()方法。
+    </script>
+</body>
+</html>
