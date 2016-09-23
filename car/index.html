@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript">
+        function setFontsize(){
+            document.documentElement.style.fontSize=window.innerWidth/320*100+'px'
+        }
+        setFontsize();
+        window.addEventListener('resize',setFontsize,false);
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/index00.css" type="text/css"/>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="area-chose">
+            <span class="area-local active">地方版<i class="wj-icon active"></i></span>
+            <span class="area-country">全国版<i class="wj-icon"></i></span>
+        </div>
+        <div class="swiper-container" id="o-c">
+            <div class="swiper-wrapper" >
+                <div class="swiper-slide item">
+                    <div class="wj-container page1">
+                        <div class="wj-index-bg" style="margin-top: -1rem;">
+                            <img src="images/index-anhui-2x.png" alt="">
+                            <a href="tel:400-86-95519">400-86-95519</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide item">
+                    <div class="wj-container page3">
+                        <div class="swiper-container i-c1">
+                            <div class="swiper-wrapper changewrap">
+                                <div class="swiper-slide stop" style="height: 9.71rem;">
+                                    <div class="wj-index-bg">
+                                        <img  src="images/content2-60suo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar1"></div>
+                        </div>
+                     </div>   
+                </div>
+
+
+
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1rem;">
+                            <img src="images/content5.png"/>
+                        </div>
+                    </div>    
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1.5rem">
+                            <img class="lazy" src="images/content6_1.png">
+                            <a id="clause1" ><img class="lazy" src="images/content6_2.png"></a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page3">
+                        <div class="swiper-container " id="i-c2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide stop" style="height:5.41rem;">
+                                    <div class="wj-index-bg" style="margin-top: 0">
+                                        <img src="images/content7.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item" >
+                    <div class="wj-container page3">
+                        <div class="swiper-container " id="i-c3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide stop" style="height:5.27rem;">
+                                    <div class="wj-index-bg"  style="margin-top: 0">
+                                        <img src="images/content8.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar3"></div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1.5rem">
+                            <img src="images/content9.png"/>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="arrowdiv"></div>
+        </div>
+    </div>
+    <div id="clause"></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<Script>
+   $(function(){
+       $('.area-chose span').click(function() {
+           $(this).addClass('active').siblings().removeClass('active');
+           $(this).children().addClass('active').parents().siblings().children().removeClass('active');
+       });
+
+       var $slide=$('.item');
+       var n=1/($slide.length-1);
+       var index=0;
+       var toScale=function(){};
+       var oSwiper = new Swiper('#o-c', {
+           speed:600,
+           spaceBetween:0,
+           pagination: '.swiper-pagination',
+           direction: 'vertical',
+           loop: false,
+           nextButton: '.arrowdiv',
+           watchSlidesProgress: true,
+           onProgress: function(swiper,progress) {
+               var p=(progress-n*index)/n;
+               if(p<=1&&p>=0){
+                    $slide.eq(index).children().css({
+                        '-webkit-transform':'scale('+(1-p)+')',
+                        'transform':'scale('+(1-p)+')',
+                        '-webkit-transform-origin':'center bottom',
+                        'transform-rigin':'center bottom',
+                        '-webkit-transition':''
+                    });
+               }else if(p<0){
+                    $slide.eq(index).children().css({
+                        '-webkit-transform':'scale('+(1+p)+')',
+                        'transform':'scale('+(1+p)+')',
+                        '-webkit-transform-origin':'center bottom',
+                        'transform-origin':'center top',
+                        '-webkit-transition':''
+                    });
+               }
+               if(Math.abs(p)>0.5){
+                   toScale=function(){
+                       $slide.eq(index).children().css({
+                           '-webkit-transform':'scale(0)',
+                           '-webkit-transition':'-webkit-transform 0.6S'
+                       });
+                   }
+               }else {
+                   toScale=function(){};
+               }
+           },
+           onTransitionEnd:function(swiper){
+               $slide.eq(index).children().css('transform','scale(1)');
+               index=swiper.activeIndex;
+           },
+           onTransitionStart:function(swiper,event){
+               toScale();
+           }
+       });
+       var iSwiper = new Swiper('.i-c1',{
+           scrollbar: '.swiper-scrollbar1',
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+
+       });
+       var aSwiper = new Swiper('#i-c2',{
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+       });
+       var xSwiper = new Swiper('#i-c3',{
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+       })
+   })
+
+
+</Script>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>金榜题名保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="金榜题名保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="" class="animation">
+<form>
+<section>
+    <h1 class="glb-title glb-text-center glb-tr">北京甜蜜蜜婚纱摄影</h1>
+    <div class="weui_cells weui_cells_form first">
+        <div class="weui_cell" data-blz-keyboard="true" data-blz-input="true">
+            <div class="weui_cell_hd"><label for="" class="weui_label glb-para">消费金额(元)</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" class="weui_input glb-for-screen" readonly data-blz-tofixed="2" data-blz-sync=".sync">
+                <span class="weui_input sync glb-text-right"></span>
+            </div>
+            <div class="blz-pointer glb-twinkle glb-hide" style="top:0;"></div>
+        </div>
+        
+        <div class="weui_cell" data-blz-keyboard="true" data-blz-input="true">
+            <div class="weui_cell_hd"><label for="" class="weui_label glb-para">保额口令</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" class="weui_input glb-text-right" readonly data-blz-tofixed="0">
+            </div>
+            <div class="blz-pointer glb-twinkle glb-hide" style="top:0;"></div>
+        </div>
+    </div>
+    <div class="glb-tr">
+        <input type="button" class="weui_btn weui_btn_primary" value="确认" data-blz-keyboard-submit>
+    </div>
+</section>
+
+<!--键盘-->  
+<table class="glb-keyboard glb-slide-below" cellspacing="0" data-blz-keyboard="true">
+    <caption><span class="glb-for-screen">虚拟键盘</span></caption>
+    <tbody>
+        <tr>
+            <td role="button">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td class="glb-keyb-delete"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td rowspan="3" class="glb-keyb-confirm">确认</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td class="glb-keyb-hide" data-blz-keyboard="false"></td>
+            <td>0</td>
+            <td>.</td>
+        </tr>
+    </tbody>
+</table>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/checkcard.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        $('form').check({
+	        getVerificationCode:function($elem){
+                
+            }
+	    });
+    }(window.jQuery);
+</script>
+</html>

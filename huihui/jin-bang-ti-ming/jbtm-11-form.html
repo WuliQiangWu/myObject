@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>保单邮寄地址</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="保单邮寄地址">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+
+ <form>
+    <h2 class="weui_cells_title glb-for-screen">表单</h2>
+    <section class="glb-form weui_cells weui_cells_form">
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">收 件 人 姓 名</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           
+ 		   <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">联 系 电 话</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="tel" data-blz-type="phone">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell icon">
+             <div class="weui_cell_hd">
+                 <label class="weui_label">所 在 区 域</label>
+             </div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <select class="weui_input" id="s_province" name="s_province" required>
+                 </select>
+             </div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <select class="weui_input" id="s_city" name="s_city" required></select>
+             </div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <select class="weui_input" id="s_county" name="s_county" required></select>
+             </div>
+             <i class="weui_icon_warn" id="warning7"></i>
+          </div>
+          
+          <div class="weui_cell">
+             <div class="weui_cell_hd textarea">
+                 <label class="weui_label">详 细 地 址</label>
+             </div>
+             <div class="weui_cell_bd weui_cell_primary">
+                 <textarea class="weui_input" type="text" data-blz-type="any"></textarea>
+             </div>
+             <i class="weui_icon_warn" id="warning4"></i>
+          </div>
+    
+    </section>
+    
+    <div class="glb-flex-tr-xy glb-tr">
+        <div class="glb-flex-td">
+            <a href="javascript:void(0);" class="weui_btn weui_btn_plain_primary">上一步</a>
+        </div>
+        <div class="glb-flex-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="确认投保">
+        </div>            
+    </div>
+</form>  
+    
+    
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+</html>

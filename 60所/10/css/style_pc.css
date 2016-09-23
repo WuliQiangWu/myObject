@@ -1,0 +1,170 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+button,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  vertical-align: baseline;
+  font-size: 12px;
+}
+a {
+  color: #666666;
+  text-decoration: none;
+}
+/*
+h1,h2,h3,h4,h5,h6,em,del{
+    font-style:normal;
+    font-weight:normal;
+    font-size:100%;
+    -webkit-text-size-adjust:none;
+}
+*/
+nav ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+html{
+	width: 100%;
+	height: 100%;
+	background: #00a8b6;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg.png) repeat-x;
+  background-size: 100% 100%;
+}
+.gx-wrap {
+  width: 1210px;
+  margin: 0 auto;
+  position: relative;
+}
+.gx-wrap .rode {
+  width: 211px;
+  height: 211px;
+  border: solid 5px #fff384;
+  position: absolute;
+  top: 422px;
+  left: 84px;
+}
+.gx-wrap span {
+  color: #fff384;
+  font-size: 20px;
+  display: block;
+  position: absolute;
+  top: 651px;
+  left: 136px;
+}
+.gx-wrap p {
+  position: absolute;
+  top: 783px;
+  left: 91px;
+  color: white;
+  font-size: 18px;
+}
+.gx-wrap .iphone-play {
+  width: 380px;
+  height: 768px;
+  position: absolute;
+  top: 64px;
+  right: 77px;
+}
+.iphone-play img {
+  width: 100%;
+  display: block;  
+}
+.gx-wrap .iphone-play .phone1 {
+  position: absolute;
+  top: 63px;
+  right: 108px;
+}
+.gx-wrap .iphone-play .playCon {
+  background: #FFFFFF;
+  padding: 12px;
+}
+
+.img10{
+	width: 355px;
+	height:560px;
+}
+.gx-wrap .iphone-play .playInfo {
+  position: absolute;
+  top: 169px;
+  right: 4px;
+}
+.phoneDb img{
+	width:100%;
+}
+.logo{
+	margin-left: 79px;
+}

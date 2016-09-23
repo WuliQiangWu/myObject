@@ -1,0 +1,31 @@
+.withhole-wrap{
+	width: 90%;
+	margin: 0 auto;
+}
+.withhole-wrap h1{
+	text-align: center;
+	font-size: 1.4rem;
+	line-height: 3rem;
+	font-weight:bold ;
+}
+.withhole-wrap p{
+	margin-top: 1.6rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.withhole-wrap h2{
+	margin-top: 1.5rem;
+	line-height: 1.5rem;
+}
+.withhole-wrap td{
+	border: 1px solid #000000;
+}
+.w-sub{
+	display: block;
+	width: 100%;
+	background: #5dba19;
+	border-radius: 0px;
+	color: white;
+	margin: 0;
+	margin-top: 1.5rem;
+}

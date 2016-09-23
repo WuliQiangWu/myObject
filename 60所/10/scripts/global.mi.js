@@ -1,0 +1,1 @@
+var Global=function(){return{isWeiXin:function(){return-1<location.href.indexOf("_weixin_")?!0:"micromessenger"==window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i)?!0:!1},getParameterFromUrl:function(a,c,b){return(a=a.match(RegExp("(\\?|&)"+c+"=([^&?]*)","i")))?a[2]:b?b:null},init:function(){}}}();

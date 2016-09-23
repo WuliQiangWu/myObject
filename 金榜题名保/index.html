@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <script>
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth*100/320+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',setFontSize,false);
+    </script>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+            height:100%;
+            width:100%;
+        }
+        ul,li{
+            list-style: none;
+            font-size: 14px;
+        }
+
+        body{
+            margin:0;
+            padding:0;
+        }
+        .chose-area{
+            font-size: 14px;
+            position: absolute;
+            top:20px;
+            width:100%;
+            height:30px;
+            text-align: center;
+        }
+        .chose-area .chose{
+            outline:none;
+            height:30px;
+            width:75px;
+            padding:0 0 0 8px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background-color:#ffffff;
+            border:1px solid #CCCCCC;
+            /*background-image:url(images/jianjiao-9.png) ;*/
+            background-repeat: no-repeat;
+            background-position: 55px center;;
+        }
+        .chose-area span{
+            display: inline-block;
+            margin-right: 10px;
+            letter-spacing: 3px;
+        }
+        #hide{
+            position: absolute;
+            bottom:0;
+            display: none;
+            padding:25px;
+            width:100%;
+            height:100%;
+            box-sizing: border-box;
+            background: #ffffff;
+        }
+        #hide ul{
+            width:100%;
+            overflow: hidden;
+            padding:0;
+        }
+        #hide ul li{
+            float: left;
+            width:70px;
+            height:30px;
+            border:1px solid #CCCCCC;
+            margin:0 18px 12px 18px;
+            line-height: 30px;
+            text-align: center;
+        }
+        #hide ul li:active{
+            border:1px solid #a3111e;
+        }
+        #hide .close{
+            display: inline-block;
+            width:15px;
+            height:15px;
+            position: absolute;
+            top:10px;
+            left:20px;
+            /*background: url(images/close@02.png) no-repeat;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="chose-area">
+        <span>孩子参加高考所在地</span>
+        <select class="chose">
+            <option selected>安徽俺</option>
+        </select>
+    </div>
+    <div id="hide">
+        <i class="close"></i>
+        <ul>
+            <li>河南</li>
+            <li>河北</li>
+            <li>内蒙古</li>
+            <li>黑龙江</li>
+            <li>吉林</li>
+            <li>长春</li>
+        </ul>
+    </div>
+    <Script src="js/zepto.min.js"></Script>
+    <script src="js/jquery-1.12.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.chose').on('click',function(){
+            $('#hide').slideDown("slow");
+            return false;
+        });
+
+        var oLi=$('#hide ul').children();
+        console.log(oLi);
+        var oArea=$('.chose');
+        oLi.on('click',function(ev){
+            var oAreaName= oArea.html();
+            var index=oLi.index(this);
+            var val = oLi.eq(index).html();
+            oLi.eq(index).html(oAreaName);
+            oArea.html(val);
+            $('#hide').slideUp(-100);
+            return false;
+        });
+        $("#hide .close").on('click',function(){
+            $('#hide').slideUp(-100);
+        })
+    })
+</script>
+</body>
+</html>

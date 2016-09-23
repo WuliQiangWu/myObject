@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>金榜题名保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="金榜题名保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+<article class="weui_msg glb-msg-success">
+    <header class=" weui_icon_area">
+    	<i class="weui_icon_msg weui_icon_success"></i>
+    </header>
+    <section class="weui_text_area">
+    	<h2 class="weui_msg_title">消费金额确认成功</h2>
+        <p class="weui_msg_desc"></p>
+    </section>
+    <section class="weui_opr_area">
+        <table style="width:auto;margin:0 auto;" class="glb-para" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="glb-para-grey">消费者</td>
+                    <td>哈哈</td>
+                </tr>
+                <tr>
+                    <td class="glb-para-grey">消费金额</td>
+                    <td>1500.00元</td>
+                </tr>
+                <tr>
+                    <td class="glb-para-grey">赠送保险</td>
+                    <td>金榜题名保</td>
+                </tr>
+                <tr>
+                    <td class="glb-para-grey">应缴保费</td>
+                    <td>30.00元</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="glb-tr">   
+        <div>
+            <a class="weui_btn weui_btn_primary">完成</a>
+        </div>    
+    </section>
+</article>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript">
+        function setFontsize(){
+            document.documentElement.style.fontSize=window.innerWidth/320*100+'px'
+        }
+        setFontsize();
+        window.addEventListener('resize',setFontsize,false);
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/index00.css" type="text/css"/>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="area-chose">
+            <span class="area-local active">地方版<i class="wj-icon active"></i></span>
+            <span class="area-country">全国版<i class="wj-icon"></i></span>
+        </div>
+        <div class="swiper-container" id="o-c">
+            <div class="swiper-wrapper" >
+                <div class="swiper-slide page1">
+                    <div class="wj-index-bg" style="margin-top: -1rem;">
+                        <img src="images/index-anhui-2x.png"/>
+                        <a href="tel:400-88-45678">400-88-45678</a>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide page3 ">
+                    <div class="swiper-container i-c1">
+                        <div class="swiper-wrapper changewrap">
+
+
+                            <div class="swiper-slide    slideNone" style="height:12.13rem;">
+                                <div class="wj-index-bg">
+                                    <img src="images/content2-2x.png" />
+                                </div>
+                            </div>
+
+                            <!--<div class="swiper-slide stop" style="height: 9.71rem;">-->
+                                <!--<div class="wj-index-bg">-->
+                                    <!--<img  src="images/content2-60suo.png" />-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+
+                        </div>
+                        <div class="swiper-scrollbar1"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="swiper-slide page2">
+                    <div class="wj-index-bg" style="margin-top: -1rem;">
+                        <img src="images/content3.png"/>
+                    </div>
+                </div>
+                <div class="swiper-slide page2">
+                    <div class="wj-index-bg" style="margin-top: -1.2rem">
+                        <img class="lazy" src="images/content6_1.png">
+                        <a id="clause1" ><img class="lazy" src="images/content6_2.png"></a>
+                    </div>
+                </div>
+                <div class="swiper-slide page3">
+                    <div class="swiper-container " id="i-c2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide stop" style="height:5.41rem;">
+                                <div class="wj-index-bg" style="margin-top: 0">
+                                    <img src="images/content7.png"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar2"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide page3" >
+                    <div class="swiper-container " id="i-c3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide stop" style="height:5.31rem;">
+                                <div class="wj-index-bg"  style="margin-top: 0rem">
+                                    <img src="images/content8.png"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar3"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide page2">
+                    <div class="wj-index-bg" style="margin-top: -1.5rem">
+                        <img src="images/content9.png"/>
+                    </div>
+                </div>
+            </div>
+            <div class="arrowdiv"></div>
+        </div>
+    </div>
+    <div id="clause"></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<Script>
+   $(function(){
+       $('.area-chose span').click(function(){
+           $(this).addClass('active').siblings().removeClass('active');
+           $(this).children().addClass('active').parents().siblings().children().removeClass('active');
+           $('.swiper-wrapper').css('transform','translate3D(0,0,0)');
+//           if ($(this).hasClass("area-local")) {
+//               setImgByProvince(provincekey);
+//               $("#university_2x").show();
+//
+//           }
+//           else {
+//               $("#head_img").attr("src", head_src + "index-quanguo.png");
+//               $("#body_img").attr("src", head_src + "content2-60suo.png");
+//               $("#university_60suo").hide();
+//           }
+
+           if (oSwiper!=undefined) {
+               oSwiper.slideTo(0);
+           }
+
+           $('.page .swiper-wrapper').children().toggle();
+       });
+
+       $('#clause1').click(function(){
+           $('#clause').css('display','block').load('clause-chinalife.html');
+           $('#wrap').css('display','none')
+       });
+       var oSwiper = new Swiper('#o-c', {
+           pagination: '.swiper-pagination',
+           direction: 'vertical',
+           loop: false,
+           mousewheelControl: false,
+           paginationClickable: true,
+           nextButton: '.arrowdiv',
+           autoHeight:true,
+           lazyLoading : true,
+           resistance:true,
+           resistanceRatio:0.5,
+           watchSlidesProgress: true,
+           onSetTransition: function(swiper){
+               if(swiper.activeIndex==1){
+                   swiper.params.onlyExternal=true;
+                   swiper.disableMousewheelControl();
+               }else{
+                   swiper.params.onlyExternal=false;
+                   swiper.enableMousewheelControl();
+               }
+               swiper.myactive = swiper.activeIndex;
+           },
+           onInit: function(swiper) {
+               swiper.myactive = 0;
+
+           },
+           onProgress: function(swiper) {
+               for (var i = 0; i < swiper.slides.length; i++) {
+                   var slide = swiper.slides[i];
+                   var progress = slide.progress;
+                   console.log(progress)
+                   var translate, boxShadow;
+                   translate = progress * swiper.height * 0.5;
+                   scale = 1 - Math.min(Math.abs(progress * 0.25), 1);
+                   boxShadowOpacity = 0;
+                   slide.style.boxShadow = '0px 0px 10px rgba(0,0,0,' + boxShadowOpacity + ')';
+                   if (i == swiper.myactive) {
+                       es = slide.style;
+                       es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + (translate) + 'px,0) scale(' + scale + ')';
+                       es.zIndex=0;
+                   }else{
+                       es = slide.style;
+                       es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform ='';
+                       es.zIndex=1;
+                   }
+               }
+           }
+       });
+       var iSwiper = new Swiper('.i-c1',{
+           scrollbar: '.swiper-scrollbar1',
+           scrollbarHide : false,
+           scrollbarDraggable : true ,
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           freeMode: true,
+           autoHeight: true, //enable auto height
+           resistance:true,
+           resistanceRatio:0.5,
+           freeModeMomentum : false,
+           mousewheelControl: true,
+           mousewheelSensitivity : 0.5,
+           watchSlidesProgress: true,
+           onSetTransition: function(swiper,translate){
+               nowTranslate=swiper.translate;
+               if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0}
+               slideHeight=swiper.slides[0].scrollHeight;
+               swiperHeight=swiper.height;
+
+               if(nowTranslate>1 && nowTranslate > beforeTranslate){oSwiper.slideTo(0);}
+               if(slideHeight-swiperHeight+nowTranslate<0 && nowTranslate < beforeTranslate){oSwiper.slideTo(2);}
+               beforeTranslate=nowTranslate;
+               return false;
+           }
+
+       });
+       var aSwiper = new Swiper('#i-c2',{
+           scrollbar: '.swiper-scrollbar2',
+           scrollbarHide : false,
+           scrollbarDraggable : true ,
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           freeMode: true,
+           autoHeight: true, //enable auto height
+           resistance:true,
+           resistanceRatio:0.5,
+           freeModeMomentum : false,
+           mousewheelControl: true,
+           mousewheelSensitivity : 0.5,
+           onSetTransition: function(swiper,translate){
+               //translate 一直为0，不可直接用
+               nowTranslate=swiper.translate;
+               if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0}
+               slideHeight=swiper.slides[0].scrollHeight;
+               swiperHeight=swiper.height;
+
+               if(nowTranslate>3 && nowTranslate > beforeTranslate){oSwiper.slideTo(3);}
+               if(slideHeight-swiperHeight+nowTranslate<0 && nowTranslate < beforeTranslate){oSwiper.slideTo(5);}
+               beforeTranslate=nowTranslate;
+               return false;
+           }
+       });
+       var xSwiper = new Swiper('#i-c3',{
+           scrollbar: '.swiper-scrollbar3',
+           scrollbarHide : false,
+           scrollbarDraggable : true ,
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           resistance:true,
+           resistanceRatio:0.5,
+           freeMode: true,
+           autoHeight: true, //enable auto height
+           freeModeMomentum : false,
+           mousewheelControl: true,
+           mousewheelSensitivity : 0.5,
+           onSetTransition: function(swiper,translate){
+               nowTranslate=swiper.translate;
+               if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0}
+               slideHeight=swiper.slides[0].scrollHeight;
+               swiperHeight=swiper.height;
+
+               if(nowTranslate>4 && nowTranslate > beforeTranslate){oSwiper.slideTo(4);}
+               if(slideHeight-swiperHeight+nowTranslate<0 && nowTranslate < beforeTranslate){oSwiper.slideTo(6);}
+
+               beforeTranslate=nowTranslate;
+               return false;
+           }
+       })
+   })
+
+
+</Script>
+</body>
+</html>
+

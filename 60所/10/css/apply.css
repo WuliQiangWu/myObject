@@ -1,0 +1,62 @@
+.apply-instruction-wid{
+	line-height: 1.2rem;
+	font-size:.8rem;
+	float: right;
+	 margin-left: 0.5rem;
+}
+.upfilebox {
+    position: relative;
+            }
+.upfilebox input {
+    width: 40%;
+    height: 1.8rem;
+    position: relative;
+    z-index: 9;
+    opacity: 0;
+    vertical-align: center;
+}
+.upfilebox label {
+    position: absolute;
+    display:inline-block;
+    vertical-align:middle;
+    color: #fff;
+    top: 0px;
+    left: 0px;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    width: 100%;
+}
+
+/*--index--*/
+.banner-bj{ position: relative;}
+.banner-lb{ display: none;}
+.ulList{ text-align: center; width: 80%; margin: 0px auto; height: 94%; overflow: hidden;}
+.ulList ul{ padding: 0px; margin: 0px; height: 90%; width: 100%; overflow: hidden;}
+.ulList li{ list-style: none; padding: 0px; margin: 0px;height: 100%; line-height: 17; }
+.banner-lb{position: absolute; width: 100%; height: 100%; background:rgba(0,0,0,0.6); top: 0px;}
+.tab_menu{ position:absolute; height: 100%; width: 100%; top: 0px;}
+
+.banner-title{ width: 80%; margin: 0px auto; margin-bottom: 0.5rem;  background:rgba(0,0,0,0.8); color: #fff; font-size: 1.8rem; line-height: 2.3rem; text-align: center; border-bottom-left-radius: 0.6rem; border-bottom-right-radius: 0.6rem;}
+.triggerRight{ position: absolute; right: 0.2em; top: 44%;}
+.triggerLeft{ position: absolute; left: 0.2em; top: 44%;}
+.close-img{ position: absolute; right: 0.2em; top: 0.5em; width: 10%; z-index: 10;}
+
+.tab_option .circle{
+	display: inline-block;
+	margin-right:4px;
+	width:8px;
+	height:8px;
+	text-indent:9999px;
+	cursor:pointer;
+	border-radius: 4px;
+	border: 1px solid #fff;
+
+}
+#selected_option{background: #fff;}
+.tab_option{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+.tap{ z-index: 3;}

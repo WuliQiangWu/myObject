@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>金榜题名保商户端（联系我们）</title>
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script type="text/javascript">
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth/32+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',function(){
+            setFontSize();
+        });
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.px.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wj-style.css"/>
+</head>
+<body>
+    <div class="wj-wrap wj-callus">
+        <h1 class="call-logo">
+            <img src="../images/w-call-logo.png"/>
+            <span></span>
+        </h1>
+        <p class="wj-call wj-weight">
+            <span >技术支持: </span>
+            <span class="wj-green"><a href="tel:40086-95519">40086-95519</a> </span>
+        </p>
+        <p class="wj-call wj-weight">
+            <span >客服电话: </span>
+            <span class="wj-green"><a href="tel:95519">95519</a></span>
+        </p>
+    </div>
+    <div class="wj-logo"></div>
+</body>
+</html>

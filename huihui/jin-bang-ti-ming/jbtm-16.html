@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>金榜题名保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="金榜题名保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .glb-form .weui_label:not(.agreement) {
+        width:5em;
+    }
+</style>
+</head>
+
+<body ontouchstart="">
+    <section class="glb-tr glb-text-center">
+        <p class="glb-para-grey">2016-9-1<br>北京望京奥迪旗舰店赠送保额</p>
+        <p class=" glb-title-sb">1857.00元</p>
+    </section>
+    <form class="glb-form">
+
+    <h2 class="weui_cells_title glb-for-screen">表单</h2>
+    <section class="weui_cells weui_cells_form"> 
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">你 的 姓 名</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               		<label class="weui_label">手 机 号 码</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="tel" data-blz-type="phone" pattern="[0-9]*">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>  
+    </section>
+    
+    <div class="glb-flex-tr-xy glb-tr">
+        <div class="glb-flex-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="收到">
+            <p class="glb-note glb-text-center">赠送保额无误点击收到</p>
+        </div>           
+    </div>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/checkcard.js"></script>
+<script type="application/javascript" src="../js/canvas-resize.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        $('form').check({
+	        getVerificationCode:function($elem){
+                
+            }
+	    });
+    }(window.jQuery);
+</script>
+</html>

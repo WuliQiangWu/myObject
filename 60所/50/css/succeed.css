@@ -1,0 +1,24 @@
+.s-prompt{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.6) ;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.succeed-bar{
+	margin-bottom: 3.69rem;
+}
+.arrows{
+	width:50%;
+	margin-left:50%;
+}
+.arrows img{
+	display: block;
+	width: 100%;
+}
+.o-sub{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}

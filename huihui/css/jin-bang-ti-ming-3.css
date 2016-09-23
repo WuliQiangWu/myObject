@@ -1,0 +1,856 @@
+@charset "utf-8";
+
+/*
+ * 样式重置
+ */
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+} 
+html {
+	font-size: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	margin: 0;
+	padding: 0;
+    font-family:"PingFang SC","Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft YaHei","微软雅黑",sans-serif;
+    line-height:1.6;
+    font-size:14px;
+    color:#000;
+    background-color:#fbf9fe;
+}
+
+ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,hgroup,p,blockquote,figure,form,fieldset,input,legend,pre,abbr,button {
+	margin: 0;
+	padding: 0;
+}
+a,
+select,
+button,
+input {
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+input::placeholder,
+textarea::placeholder{
+    color:#999;
+    font-size:12px;
+}
+button:focus,
+select:focus,
+input:focus,
+textarea:focus {
+    outline:0;
+}
+li {
+    list-style:none;
+}
+a {
+    color:inherit;
+    text-decoration:none;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+td {
+    padding:0 0.4em;
+}
+img {
+    max-width:100%;
+}
+/*
+ * 修复页面效果不按照指定样式渲染的bug
+ */
+ div,
+ p,
+ a {
+    max-height:9999px;
+ }
+
+/*
+ * weui类修改
+ * weui类扩展
+ */
+.weui_cell_primary {
+    overflow:hidden;
+}
+.weui_label {
+    width:auto;
+    padding-right:1em;
+}
+.weui_cells.first {
+    margin-top:0;
+}
+.weui_input {
+    display:block;
+}
+.weui_msg .weui_icon_area {
+    margin-bottom:12px;
+}
+.weui_navbar_item.active {
+    color:#fff;
+    background-color:#04be02;
+}
+.weui_navbar {
+    color:#04be02;
+}
+.weui_btn_link {
+    color:#04be02;
+}
+
+/*
+ * table
+ */
+.glb-table {
+    background-color:#fff;
+}
+.glb-table a {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:100000%;
+    -webkit-transform:translateX(-80%);
+    transform:translateX(-80%);
+    z-index:1000;
+}
+.glb-table a:active {
+    background-color:rgba(0,0,0,0.2);
+}
+.glb-table tr {
+    position:relative;
+}
+.glb-table th,
+.glb-table td {
+    padding:0.8em 0.4em;
+}
+.glb-table th {
+    background-color:#fbf9fe;
+}
+
+.glb-table tbody tr:nth-child(even){
+    background-color:#f4f4f4;
+} 
+ 
+/*
+ * 图标系列
+ */
+.glb-icon {
+    padding-left:1.8em;
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+}
+.glb-icon-squre:checked {
+    background: url(../images/glb-agreement.svg) no-repeat center center;
+    background-size: 12px 12px;
+}
+.glb-icon-squre {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin-right: 0.5em;
+    border: 1px solid #04be02;
+    border-radius: 4px;
+    vertical-align: middle;
+}        
+.glb-icon-car {
+    background:url(../images/w-icon-add.png) no-repeat left center;
+    background-size:16%;
+}    	
+.glb-icon-money {
+    background:url(../images/glb-icon-money.svg) no-repeat left center;
+    background-size:1.2em 1.2em;
+}
+.glb-icon-location {
+    background:url(../images/glb-icon-location.svg) no-repeat left center;
+    background-size:1.2em 1.2em;
+}
+.glb-icon-university {
+    background:url(../images/glb-icon-university.svg) no-repeat left center;
+    background-size:1.2em 1.2em;
+}
+.glb-icon-phone {
+    background:url(../images/glb-icon-phone.svg) no-repeat left center;
+    background-size:1.2em 1.2em;
+}
+.glb-icon-phone-big {
+    display:inline-block;
+    height:3.6rem;
+    width:3.6rem;
+    background:url(../images/glb-icon-phone-big.svg) no-repeat left center;
+    background-size:3.6rem 3.6rem;
+}
+.glb-icon-waiting-big {
+    display:inline-block;
+    height:3.2rem;
+    width:3.2rem;
+    background:url(../images/glb-icon-waiting-big.svg) no-repeat left center;
+    background-size:3.2rem 3.2rem;
+}
+
+.glb-icon+.glb-icon-para {
+    padding-left:1.8em;
+}
+  
+/*
+ * 通用样式
+ * 屏幕阅读器
+ * 盒模型
+ * logo
+ * 标题，段落
+ * 文本溢出
+ * 二维码
+ * 底部定位
+ * 链接
+ * 边框系列
+ * 间隔线
+ */
+.glb-for-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    z-index:-1;
+}
+.glb-for-screener {
+    white-space:nowrap;
+    text-indent:9999px;
+    overflow:hidden;
+}
+
+.glb-full-screen {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+}
+
+.glb-flex-tr-xy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.glb-flex-td {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.glb-flex-td+.glb-flex-td {
+    margin-left:12px;
+}
+.glb-tr-double {
+    padding:24px 12px;
+ }
+.glb-tr {
+    padding:12px;
+}
+.glb-tr-y {
+    padding-top:12px;
+}
+.glb-tr .glb-tr {
+    padding:12px 0;
+}
+.glb-tr-x {
+    padding:0 12px;
+}
+.glb-tr+.glb-tr {
+    padding-top:0;
+}
+.glb-mt {
+    margin-top:12px;
+}
+.glb-dis-inline {
+    display:inline-block;
+    vertical-align:middle;
+}
+.glb-box::after,
+.glb-box::before{
+    content:'';
+    display:table;
+    width:100%;
+    height:0;
+}
+.glb-box::after {
+    clear:both;
+}
+
+.glb-anxin-logo {
+    position: relative;
+    width:8.5rem;
+    height: 3.5rem;
+    margin:0 auto;
+    background: url(../images/anxin_logo.png) no-repeat center top;
+    background-size: 8.5rem 3.5rem;
+}
+.glb-anxin-logo.wan-duo-mei-gui {
+    background: url(../images/anxin_logo.png) no-repeat center top;
+    background-size: 8.5rem 3.5rem;
+}
+.glb-china-life-logo {
+    position: relative;
+    width:9.375rem;
+    height:2.35rem;
+    margin:0 auto;
+    background: url(../images/china-life.png) no-repeat center top;
+    background-size: 9.375rem 2.35rem;
+}
+.glb-china-life-logo.wan-duo-mei-gui {
+    background: url(../images/china-life.png) no-repeat center top;
+    background-size: 9.375rem 2.35rem;
+}
+.glb-china-life-logo a {
+    position: absolute;
+    width: 40%;
+    height: 1rem;
+    right: 0;
+    top: 0.4rem;
+} 
+.glb-anxin-logo a {
+    position: absolute;
+    width: 50%;
+    height: 1rem;
+    right: 0;
+    top: 1.6rem;
+}
+
+.glb-text-center {
+    text-align:center;
+}
+.glb-text-right {
+    text-align:right;
+}
+
+.glb-title-big {
+    font-size:18px;
+    font-weight:400;
+}
+.glb-title {
+    font-size:16px;
+    font-weight:400;
+}
+.glb-title-sb {
+    font-size:40px;
+}
+.glb-para {
+    font-size:14px;
+    font-weight:400;
+}
+.glb-note,
+.glb-para-grey {
+    font-size:14px;
+    font-weight:400;
+    color:#888;
+}
+.glb-note {
+    padding-top:0.5em;
+    font-size:12px;
+}
+.glb-para-red {
+    font-size:14px;
+    font-weight:400;
+    color:#f43530;
+}
+.glb-para-sm {
+    font-size:12px;
+    font-weight:400;
+}
+.glb-para-sm-grey {
+    font-size:12px;
+    font-weight:400;
+    color:#888;
+}
+.glb-red {
+    color:#f43530;
+}
+.glb-green {
+    color:#04be02;
+}
+.glb-orange {
+    color:#ffce54;
+}
+.glb-grey {
+    color:#888;
+}
+.glb-black {
+    color:#000;
+}
+
+.glb-text-of {
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.glb-qr {
+    display:block;
+    height:10rem;
+    width:10rem;
+    margin:0 auto;
+    background-color:#f2f2f2;
+}
+.glb-qr img,
+.glb-qr canvas {
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.glb-bottom {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+.glb-link {
+    color:#1b60eb;
+    text-decoration:underline;
+}
+.glb-link:active {
+    text-decoration:none;
+}
+.glb-no-radius,
+.glb-no-radius::after {
+    border-radius:0;
+}
+
+.glb-pr {
+    position:relative;
+}
+.glb-bk-white {
+    background-color:#fff;
+}
+.glb-border-left,
+.glb-border-top,
+.glb-border-bottom,
+.glb-border-right {
+    position:relative;
+}
+.glb-border-left::before,
+.glb-border-top::before,
+.glb-border-bottom::after,
+.glb-border-right::after {
+    content:'';
+    position:absolute;
+    background-color:#d9d9d9;
+}
+.glb-border-right::after  {
+    top:0;
+    bottom:0;
+    right:0;
+    width:1px;
+    -webkit-transform:scaleX(0.5);
+    transform:scaleX(0.5); 
+}
+.glb-border-bottom::after  {
+    left:0;
+    bottom:0;
+    right:0;
+    height:1px;
+    -webkit-transform:scaleY(0.5);
+    transform:scaleY(0.5); 
+}
+.glb-border-top::before  {
+    left:0;
+    top:0;
+    right:0;
+    height:1px;
+    -webkit-transform:scaleY(0.5);
+    transform:scaleY(0.5); 
+}
+
+.glb-spacing-y::after {
+    content:'';
+    display:block;
+    width:100%;
+    border-top:1px dotted #dadada;
+}
+
+/*
+ * 键盘系列组件
+ */
+ .glb-keyboard {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    border-top:1px solid #d9d9d9;
+    border-left:1px solid #d9d9d9;
+    text-align:center;
+    font-size:16px;
+    color:#333;
+    background-color:#fafafa;
+    z-index:990;
+ }
+ .glb-submit-available .glb-keyb-confirm {
+    background-color:#00bd00;
+    color:#fff;
+  }
+ .glb-keyboard td{
+    width:25%;
+    padding:0.5em 0;
+    border-right:1px solid #d9d9d9;
+    border-bottom:1px solid #d9d9d9;
+ }
+ .glb-keyboard td:active {
+    box-shadow:4px 4px 8px rgba(0,0,0,0.1) inset;
+ }
+ .glb-keyb-delete {
+    background:url(../images/icon-keyboard-delete.svg) no-repeat center center;
+    background-size:1.4em 1.4em;
+ }
+ .glb-keyb-hide {
+    background:url(../images/icon-keyboard-hide.svg) no-repeat center center;
+    background-size:1.4em 1.4em;
+ }
+
+/*
+ * 条款模板样式
+ * 协议样式
+ */
+#glb_weui_mask img {
+	width:100%;
+	display:block;
+}
+#glb_weui_mask {
+	display:none;
+	background-color:#000;
+	z-index:88899;
+}
+#glb_weui_mask #wrapper {
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+#glb_weui_mask span.close {
+	position: absolute;
+    right: 0;
+    margin: 12px;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+    z-index: 888;
+    border-radius: 50%;
+    background: url(../images/close.svg) no-repeat center center;
+    background-size: 100%;
+}
+
+.glb-agreement {
+    line-height:2.5;
+}
+.glb-agreement a {
+    word-spacing: 0;
+    letter-spacing: -1.6px;
+    white-space: nowrap;
+}
+
+/*
+ * 表单组件
+ */
+.glb-form .weui_cell {
+    padding:6px 12px;
+}    
+		
+.glb-form label:not(.agreement) {
+	display:block;
+	height:20px;
+	line-height:20px;
+	width:8em;
+	padding-right:1em;
+	text-align:justify;
+	text-justify:distribute-all-lines;
+	color:#888;
+    font-size:14px;
+	vertical-align:middle;
+    word-spacing:-0.2em;
+    letter-spacing:-0.2em;
+}
+  	
+.glb-form label:not(.agreement)::after {
+	content:'';
+	display:inline-block;
+	width:100%;
+	font-size:0;
+	height:0;
+	overflow:hidden;
+	line-height:1;
+	}
+.glb-form textarea,		
+.glb-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="submit"]):not([type="button"]),
+.glb-form select {
+	height:40px;
+	line-height:40px;
+    font-size:14px;
+	-webkit-appearance:none;
+	vertical-align:middle;
+	background-color:#fff;
+	}
+.glb-form textarea {
+	padding-top:12px;
+	min-height:80px;
+	line-height:1.4;
+}			
+
+.glb-form .weui_cell_hd.textarea {
+    -webkit-align-self: baseline;
+    align-self: baseline;
+}
+.glb-form .weui_cell_hd.textarea label {
+    height:40px;
+    line-height:40px;
+ }
+.glb-form .weui_cell.icon::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 23px;
+    border: 4px solid transparent;
+    border-top-color: #000;
+    -webkit-transform: scaleX(0.8);
+    transform: scaleX(0.8);
+    z-index: 20;
+}
+
+.glb-form-select-btn,	
+.glb-form-send {
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	width:100px;
+	background-color:#04be02;
+	text-align:center;
+	color:#fff;
+}
+.glb-form-select-btn:active {
+    background-color:rgba(0,0,0,0.2);
+}
+html .glb-form-select-btn {
+   border:0;
+    height:auto;
+    background-color:rgba(0,0,0,0);
+    color:#04be02;
+    white-space:nowrap;
+    text-indent:99999px;
+}
+.glb-form-send input {
+	height:100%;
+    width:100%;
+	border:none 0;
+	color:#fff;
+    font-size:14px;
+	-webkit-box-flex:initial;
+    -webkit-flex:initial;
+    -ms-flex:initial;
+    flex:initial;
+	outline:none;
+    background-color:transparent;
+	}
+.glb-form-send input:active {
+    color:hsla(0,0%,100%,.4);
+    background-color:#039702;
+}
+.glb-form-send.grey input:active {
+    color:#fff;
+    background-color:transparent;
+}    		
+.glb-form-send.grey {
+	background-color:#a1a1a1;
+	}
+
+/*
+ * 用户信息组件
+ */
+.glb-user-info {
+    padding-top:40px;
+    text-align:center; 
+}
+.glb-user-head {
+    display:block;
+    width:4rem;
+    height:4rem;
+    margin:0 auto;
+    background:url(../images/glb-user-head.svg) no-repeat;
+    background-position:center center;
+    background-size:100% 100%;
+}
+
+/*
+ * 列表组件
+ * 列表1
+ */
+.glb-list .weui_cells {
+    margin-top:-1px;
+} 
+.glb-list-1.insure {
+    position:relative;
+} 
+.glb-list-1 .weui_cells {
+    border-top:4px solid #f43530;
+}
+.glb-insure {
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:2.575rem;
+    height:3.1rem;
+    background:url(../images/insure.png) no-repeat;
+    background-size:100% 100%;
+} 
+.glb-list-1 .glb-anxin-logo {
+    display:inline-block;
+    width:3.75rem;
+    height:2.7rem;
+    background-position:left top;
+}
+.glb-list-1 .glb-china-life-logo {
+    display:inline-block;
+    width:5rem;
+    height:1.8rem;
+    background-position:left top;
+}
+
+/*
+ * 消息类页面
+ */
+.glb-msg-error .weui_icon_warn::before {
+    display:none;
+} 
+.glb-msg-error .weui_icon_warn {
+    display:inline-block;
+    width:7.05rem;
+    height:8.05rem;
+    background:url(../images/glb-icon-warn.png) no-repeat;
+    background-size:100% 100%;
+}
+
+/*
+ * 选项卡组件
+ */
+.weui_tab .item {
+    display:none;
+    position:relative;
+    z-index:-1;
+    opacity:0;
+}
+.glb-zhuan-zeng::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 34px;
+    width: 3.425rem;
+    height: 2.6rem;
+    max-width: 88px;
+    max-height: 67px;
+    background: url(../images/zhuan-zeng.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 100;
+    transform: translateY(-74%);
+}
+
+/*
+ * 删除按钮
+ */
+.glb-delete {
+    position:absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    color: #fff;
+    font-size:14px;
+    background-color: #f00;
+    z-index: 8;
+}
+.glb-delete+* {
+    position:relative;
+    z-index:10;
+} 
+/*
+ * 动画样式
+ */
+.animation .glb-fade-in {
+    display:block;
+    opacity:1;
+    z-index:1;
+    -webkit-transition:opacity .3s linear; 
+	transition:opacity .3s linear; 
+}
+.animation .glb-fade-out {
+    opacity:0;
+}
+.animation .glb-show {
+    display:block;
+}
+.animation .glb-hide {
+    display:none;
+}
+.animation .glb-slide-over {
+    opacity:1;
+    -webkit-transition:-webkit-transform 0.3s ease-in;
+    transition:transform 0.3s ease-in;
+    -webkit-transform:translateY(-100%);
+    transform:translateY(-100%);
+}
+.animation .glb-slide-up {
+    opacity:1;
+    -webkit-transition:-webkit-transform 0.3s ease-in;
+    transition:transform 0.3s ease-in;
+    -webkit-transform:translateY(0);
+    transform:translateY(0);
+}
+.animation .glb-slide-below {
+    opacity:0;
+    -webkit-transform:translateY(100%);
+    transform:translateY(100%);
+} 
+.animation .glb-twinkle {
+    height: 18px;
+    width: 1px;
+    background-color: #2d2d2d;
+    z-index: 100;
+    -webkit-animation:twinkle 1.2s cubic-bezier(0.5,0.5,0.5,0.5) infinite;
+    animation:twinkle 1.2s cubic-bezier(0.5,0.5,0.5,0.5) infinite;
+}
+@-webkit-keyframes twinkle {
+	0% {opacity:0}
+	50% {opacity:0}
+	51% {opacity:1}
+	100% {opacity:1}
+}
+@keyframes twinkle {
+	0% {opacity:0}
+	50% {opacity:0}
+	51% {opacity:1}
+	100% {opacity:1}
+}  

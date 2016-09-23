@@ -131,10 +131,48 @@
     </div>
     <script src="jquery-1.12.3.min.js"></script>
     <Script>
-        $('.btn li').click(function(){
-            $('.btn li').eq($(this).index()).addClass('active').siblings().removeClass('active');
-            $('#pic li').hide().eq($(this).index()).show();
-        })
+//        $('.btn li').click(function(){
+//            $('.btn li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+//            $('#pic li').hide().eq($(this).index()).show();
+//        })
+
+        var oUl=document.getElementById('banna');
+        var oBtn=document.getElementsByClassName('btn')[0];
+        var aBtn=oBtn.getElementsByTagName('li');
+        var oList=document.getElementById('pic');
+        var iW=oUl.offsetWidth;
+        var iNow=0;
+        var time=null;
+
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index=i;
+            aBtn[i].onclick=function(){
+                iNow=this.index;
+                fnChagne();
+            }
+        }
+        oUl.onmouseover=function(){
+            clearInterval(time);
+        };
+        oUl.onmouseout=function(){
+            autoPlay()
+        };
+        autoPlay();
+        function autoPlay(){
+            time=setInterval(function(){
+                iNow++;
+                iNow%=aBtn.length;
+                fnChagne();
+            },1000)
+        }
+
+        function fnChagne(){
+            for(var j=0;j<aBtn.length;j++){
+                aBtn[j].className='';
+            }
+            aBtn[iNow].className="active";
+            oList.style.left=-iW*iNow+'px';
+        }
     </Script>
 </body>
 </html>

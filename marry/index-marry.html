@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript">
+        function setFontsize(){
+            document.documentElement.style.fontSize=window.innerWidth/320*100+'px'
+        }
+        setFontsize();
+        window.addEventListener('resize',setFontsize,false);
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/index00.css" type="text/css"/>
+</head>
+<body>
+<div id="wrap">
+    <div class="area-chose">
+        <span class="area-local active">地方版<i class="wj-icon active"></i></span>
+        <span class="area-country">全国版<i class="wj-icon"></i></span>
+    </div>
+    <div class="swiper-container" id="o-c">
+        <div class="swiper-wrapper" >
+            <div class="swiper-slide page1">
+                <div class="wj-index-bg" style="margin-top: -1rem;">
+                    <img src="images/content1_60suo-marry.png"/>
+                    <a href="tel:400-88-45678">400-88-45678</a>
+                </div>
+
+            </div>
+            <div class="swiper-slide page3 ">
+                <div class="swiper-container i-c1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="height:10.94rem;">
+                            <div class="wj-index-bg">
+                                <img src="images/content2_2x-marry.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar1"></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide page3 slideNone">
+                <div class="swiper-container i-c1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="height: 22.31rem;">
+                            <div class="wj-index-bg">
+                                <img id="body_img" src="images/content2_60suo-marry.png" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar1"></div>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1rem;">
+                    <img src="images/content5_1-marry.png"/>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1rem;">
+                    <img src="images/content5_2-marry.png"/>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1rem;">
+                    <img src="images/content5_3-marry.png"/>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1rem;">
+                    <img src="images/content5_5-marry.png"/>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1rem">
+                    <img class="lazy" src="images/content6-marry.png">
+                    <a id="clause1" ><img class="lazy" src="images/content6-1-marry.png"></a>
+                    <a id="clause2" ><img class="lazy" src="images/content6-2-marry.png"></a>
+                </div>
+
+            </div>
+            <div class="swiper-slide page3">
+                <div class="swiper-container " id="i-c2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="height:5.41rem;">
+                            <div class="wj-index-bg" style="margin-top: 0">
+                                <img src="images/content7-marry.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar2"></div>
+                </div>
+
+            </div>
+            <div class="swiper-slide page3" >
+
+                <div class="swiper-container " id="i-c3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"  style="height:6.12rem;">
+                            <div class="wj-index-bg"  style="margin-top: 0">
+                                <img src="images/content8-marry.png"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar3"></div>
+                </div>
+            </div>
+            <div class="swiper-slide page2">
+                <div class="wj-index-bg" style="margin-top: -1.5rem">
+                    <img src="images/content9-marry.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="arrowdiv"></div>
+    </div>
+</div>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/iscroll-probe.js"></script>
+<Script>
+    $(document).ready(function() {
+        $('.area-chose span').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).children().addClass('active').parents().siblings().children().removeClass('active');
+            $('.swiper-wrapper').css('transform','translate3D(0,0,0)');
+            if ($(this).hasClass("area-local")) {
+                //setImgByProvince(provincekey);
+                $("#university_2x").show();
+
+            }
+            else {
+                // $("#head_img").attr("src", head_src + "index-quanguo.png");
+                //$("#body_img").attr("src", head_src + "content2-60suo.png");
+                $("#university_60suo").hide();
+            }
+
+            if (oSwiper!=undefined) {
+                oSwiper.slideTo(0);
+            }
+        });
+
+        var oSwiper = new Swiper('#o-c', {
+            pagination: '.swiper-pagination',
+            direction: 'vertical',
+            loop: false,
+            mousewheelControl: false,
+            paginationClickable: true,
+            nextButton: '.arrowdiv',
+            autoHeight:true,
+            onSetTransition: function(swiper){
+                if(swiper.activeIndex==1){
+                    swiper.params.onlyExternal=true;
+                    swiper.disableMousewheelControl();
+                }else{
+                    swiper.params.onlyExternal=false;
+                    swiper.enableMousewheelControl();
+                }
+
+            }
+
+        });
+        var iSwiper = new Swiper('.i-c1',{
+            scrollbar: '.swiper-scrollbar1',
+            scrollbarHide : false,
+            scrollbarDraggable : true ,
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            freeMode: true,
+            autoHeight: true, //enable auto height
+//            noSwiping : true,
+//            noSwipingClass : 'stop',
+            freeModeMomentum : false,
+            mousewheelControl: true,
+            mousewheelSensitivity : 0.5,
+            onSetTransition: function(swiper,translate){
+                //translate 一直为0，不可直接用
+                nowTranslate=swiper.translate;
+                if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0}
+                slideHeight=swiper.slides[0].scrollHeight;
+                swiperHeight=swiper.height;
+
+                if(nowTranslate>1 && nowTranslate > beforeTranslate){oSwiper.slideTo(0);}
+                if(slideHeight-swiperHeight+nowTranslate<0 && nowTranslate < beforeTranslate){oSwiper.slideTo(2);}
+
+                beforeTranslate=nowTranslate;
+                return false;
+            }
+        });
+
+
+        var aSwiper = new Swiper('#i-c2',{
+            scrollbar: '.swiper-scrollbar2',
+            scrollbarHide : false,
+            scrollbarDraggable : true ,
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            freeMode: true,
+            autoHeight: true, //enable auto height
+            noSwiping : true,
+            freeModeMomentum : false,
+            mousewheelControl: true,
+            mousewheelSensitivity : 0.5,
+            onSetTransition: function(swiper,translate){
+                //translate 一直为0，不可直接用
+                nowTranslate=swiper.translate;
+                if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0};
+                slideHeight=swiper.slides[0].scrollHeight;
+                swiperHeight=swiper.height;
+
+                if(nowTranslate>6 && nowTranslate > beforeTranslate){oSwiper.slideTo(6);}
+                if(slideHeight-swiperHeight+nowTranslate<0 && nowTranslate < beforeTranslate){oSwiper.slideTo(8);}
+                beforeTranslate=nowTranslate;
+                return false;
+
+            }
+        });
+        var xSwiper = new Swiper('#i-c3',{
+            scrollbar: '.swiper-scrollbar3',
+            scrollbarHide : false,
+            scrollbarDraggable : true ,
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            freeMode: true,
+            noSwiping : true,
+            autoHeight: true, //enable auto height
+            noSwipingClass : 'stop',
+            freeModeMomentum : false,
+            mousewheelControl: true,
+            mousewheelSensitivity : 0.5,
+            onSetTransition: function(swiper,translate){
+                //translate 一直为0，不可直接用
+                nowTranslate=swiper.translate;
+                if( typeof(beforeTranslate)=="undefined"){beforeTranslate=0};
+                slideHeight=swiper.slides[0].scrollHeight;
+                swiperHeight=swiper.height;
+
+                if(nowTranslate>7 && nowTranslate > beforeTranslate){oSwiper.slideTo(7);}
+                if(slideHeight-swiperHeight+nowTranslate<9 && nowTranslate < beforeTranslate){oSwiper.slideTo(9);}
+
+                beforeTranslate=nowTranslate;
+                return false;
+            }
+        })
+    })
+</Script>
+</body>
+</html>
+

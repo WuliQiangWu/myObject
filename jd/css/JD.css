@@ -307,6 +307,7 @@ a{
 }
 
 #pic{
+    position: absolute;
     width:5000px;
     height:100%;
 }

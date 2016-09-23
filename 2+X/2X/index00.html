@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript">
+        function setFontsize(){
+            document.documentElement.style.fontSize=window.innerWidth/320*100+'px'
+        }
+        setFontsize();
+        window.addEventListener('resize',setFontsize,false);
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="index00.css" type="text/css"/>
+</head>
+<body>
+    <div id="wrap">
+        <div class="area-chose">
+            <span class="area-local active">地方版</span>
+            <span class="area-country">全国版</span>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" >
+                <div class="swiper-slide page1">
+                    <div class="univ"></div>
+                    <div class="logo">
+                        <a href="tel:400-88-45678">400-88-45678</a>
+                    </div>
+                </div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+                <div class="swiper-slide page2"></div>
+            </div>
+            <div class="arrowdiv"></div>
+        </div>
+    </div>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<Script>
+    $(document).ready(function() {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            direction: 'vertical',
+            loop: false,
+            mousewheelControl: true,
+            paginationClickable: true,
+            nextButton: '.arrowdiv'
+        })
+        $('span').click(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    })
+</Script>
+</body>
+</html>

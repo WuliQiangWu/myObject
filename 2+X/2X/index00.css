@@ -1,0 +1,188 @@
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-size: 0.14rem;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #284185;
+}
+#wrap{
+    width:100%;
+    height:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1;
+}
+.swiper-slide {
+    position: relative;
+    height:100%;
+    text-align: center;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.area-chose{
+    position: relative;
+    width:100%;
+    height:0.40rem;
+    overflow: hidden;
+    display: block;
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.area-chose .active{
+    background: #f15822;
+    color: #ffffff;
+}
+.area-chose span{
+    background: #ffffff;
+    text-align: center;
+    line-height: 0.40rem;
+    float: left;
+    flex:1;
+    width:50%;
+    height:0.40rem;
+}
+.page1{
+    background:url(images/index-bg.png) no-repeat center center;
+    background-size: cover;
+}
+.page1 .univ{
+    position: absolute;
+    top:1.9rem;
+    left:0;
+    background: url(images/images/content01-anhui_02.png) no-repeat center center;
+    background-size: 100%;
+    width:3.2rem;
+    height:1.37rem;
+}
+.page1 .logo{
+    position: absolute;
+    top:3.26rem;
+    left:0;
+    background: url(images/images/content1-logo.png) no-repeat center center;
+    background-size: cover;
+    width:3.2rem;
+    height:0.9rem;
+
+}
+.page1 .logo a{
+    position: absolute;
+    bottom:0.1rem;
+    left:1.55rem;
+
+
+}
+.page2{
+    background: url(images/index2_bg.png) no-repeat center center;
+    background-size: cover;
+}
+@-webkit-keyframes upTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -0.12rem, 0);
+        transform: translate3d(0, -0.12rem, 0);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    80% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    82% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0.15rem, 0);
+        transform: translate3d(0, 0.15rem, 0);
+    }
+}
+@keyframes upTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -0.12rem, 0);
+        transform: translate3d(0, -0.12rem, 0);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    80% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    82% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0.15rem, 0);
+        transform: translate3d(0, 0.15rem, 0);
+    }
+}
+.arrowdiv{
+    width: 0.36rem;
+    height: 0.54rem;
+    background-image: url(images/up_to.png);
+    background-size:cover ;
+    margin-left: -0.21rem;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index:50;
+    -webkit-animation: upTop 2s linear infinite forwards;
+    animation: upTop 2s linear infinite forwards;
+}

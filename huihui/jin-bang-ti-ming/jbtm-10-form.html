@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>金榜题名保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="金榜题名保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+<form class="glb-form">
+
+    <h2 class="weui_cells_title glb-para">投保信息</h2>
+    <section class="weui_cells weui_cells_form first">
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">指 定 大 学</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <p class="glb-para-sm">清华大学 北京大学 清华大学 清华大学 北京大学 清华大学</p>
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">投 保 金 额</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" value="10000.00元" readonly>
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">孩 子 姓 名</label>
+                   <label class="weui_label">(被 保 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">孩 子 身 份 证 号 码</label>	
+                   <label class="weui_label">(被 保 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="id" id="childid" placeholder="2010-1-1后出生的孩子可投保"> 
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">父/母 亲 姓 名</label>	
+                   <label class="weui_label">(法 定 监 护 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">父/母 亲 身 份 证 号 码</label>
+                   <label class="weui_label">(法 定 监 护 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="id"> 
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div> 
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               		<label class="weui_label">父/母 亲 手 机 号 码</label>	
+                   <label class="weui_label">(法 定 监 护 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" data-blz-type="phone" pattern="[0-9]*" id="tel1">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell send">
+                 <div class="weui_cell_hd">
+                      <label class="weui_label">验 证 码</label>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                      <input class="weui_input" type="number" pattern="[0-9]*" data-blz-type="check" data-blz-pattern="123456">
+                 </div>
+                 <div class="glb-form-send" data-blz-target="#tel1"><input type="button" value="获取验证码"></div>
+            </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">父/母 亲 电 子 邮 箱</label>	
+                   <label class="weui_label">(法 定 监 护 人)</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="email" data-blz-type="email">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>  
+             
+    </section>
+    
+    <h2 class="weui_cells_title glb-para">续保人信息</h2>
+    <section class="weui_cells weui_cells_form">
+    
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               	   <label class="weui_label">续 保 金 额</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" value="10000.00元" readonly>
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">续 保 人 姓 名</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+               		<label class="weui_label">续 保 人 手 机 号 码</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="tel" data-blz-type="phone" pattern="[0-9]*" id="tel2">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell send">
+                 <div class="weui_cell_hd">
+                      <label class="weui_label">验 证 码</label>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                      <input class="weui_input" type="number" pattern="[0-9]*" data-blz-type="check" data-blz-pattern="123456">
+                 </div>
+                 <div class="glb-form-send" data-blz-target="#tel2" id="glb-form-send"><input type="button" value="获取验证码"></div>
+            </div> 
+           
+    </section>
+    <p class="glb-note glb-text-center">*须填写孩子及本人真实有效的个人信息</p>
+      
+    <section class="glb-tr glb-agreement glb-para-sm"> 	
+        <p><a href="javascript:void(0);" data-blz-pdf="../images/1.png" class="glb-link">《投保须知》</a></p>
+        <p><a href="javascript:void(0);" data-blz-pdf="../images/2.png" class="glb-link">《安心财产保险有限责任公司金榜题名保条款( 2016 )》</a></p>
+        <p><a href="javascript:void(0);" data-blz-pdf="../images/china-life-clause.png" class="glb-link">《中国人寿保财产保险股份有限公司金榜题名保险条款( 2016 )》</a></p>
+        <p><a href="javascript:void(0);" data-blz-pdf="../images/3.jpg" class="glb-link">《安心财产保险有限责任公司金榜题名保60所名校名录( 2016 )》</a></p>
+        <p><label class="agreement glb-para-sm-grey"><input type="checkbox" id="glb-form-agreement" class="glb-icon-squre" checked >我已阅读并同意上述条款</label></p>
+    </section>
+    
+    <div class="glb-flex-tr-xy glb-tr">
+        <div class="glb-flex-td">
+            <a href="javascript:void(0);" class="weui_btn weui_btn_plain_primary">上一步</a>
+        </div>
+        <div class="glb-flex-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="下一步">
+        </div>            
+    </div>
+</form>
+
+<!--条款-->
+<div class="weui_mask" id="glb_weui_mask">
+	<span class="close"></span>
+    <div id="wrapper" style="position:absolute;top:0; left:0;right:0;bottom:0;">
+    	<ul>
+        	<li id="img-box">
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/checkcard.js"></script>
+<script type="application/javascript" src="../js/iscroll-zoom.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        'use strict';
+        
+        var childId=document.querySelector('#childid');
+        $('form').check({
+	        getVerificationCode:function($elem){
+                // 验证码发送处
+                // 将获取的验证码设置到input[data-blz-pattern="验证码设置"]中的data-blz-pattern属性即可；
+            },
+            canSubmit:function(event){
+                if(childId.dataset.blzCheck!=='pass'){return false;}
+                var val=childId.value;
+                var year=val.slice(6,10);
+                if(year<2010){
+                    $.weui.alert({
+                        title:'温馨提示',
+                        article:'仅限2010年1月1日以后出生的孩子'
+                    });
+                    event.preventDefault();
+                    return false;
+                }
+                if(childId.dataset.blzCheck!=='pass'){return false;}
+                $.weui.loading();
+                $.ajax({
+                    url:'https://chanelnumberfive.github.io/jin-bang-ti-ming-3/data/data.json',
+                    data:{},
+                    async:false,
+                    success: function(data){
+                        $.weui.loading().hide();
+                        if(!data){
+                           alert('提交信息正确');
+                           // event.preventDefault(); 
+                        }else {
+                            alert('提交信息不对');
+                            // event.preventDefault();
+                        }
+                    }    
+                });
+            }
+	    });
+    }(window.jQuery);
+    
+    // 弹窗示例
+    /*$.weui.alert({
+        title:'温馨提示',
+        article:'say something'
+    });*/
+    /*$.weui.confirm({
+        title:'温馨提示',
+        article:'say something',
+        sureCallback:function(){alert('surre');}, // 点击确定按钮后执行的函数
+        cancellCallback:function(){alert('cancel');}, // 点击取消按钮后执行的函数
+        cancelText:'<small>指定60所大学投保</small>', // 取消按钮文本
+        sureText:'修改信息' // 确定按钮文本
+    });*/
+    
+    // 加载提示
+    //$.weui.loading();
+    
+    // 警告
+    // $.weui.warn('say something');
+</script>
+</html>

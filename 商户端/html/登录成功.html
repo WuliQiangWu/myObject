@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>金榜题名保商户端（登录成功）</title>
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script src="../js/fastclick.js"></script>
+    <script type="text/javascript">
+        function setFontSize(){
+            document.documentElement.style.fontSize=window.innerWidth/32+'px';
+        }
+        setFontSize();
+        window.addEventListener('resize',function(){
+            setFontSize();
+        });
+        window.addEventListener('load', function () {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.px.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wj-style.css"/>
+    <style>
+        body,html{
+            background: #f6f6f6;
+        }
+        .wj-wrap{
+            background: #f6f6f6;
+            box-shadow: none;
+        }
+        .wj-call{
+            padding:0;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .small-icon{
+            font-size: 1.4rem;
+        }
+        .call-logo{
+            padding-bottom: 1.4rem;
+        }
+
+    </style>
+    
+</head>
+<body>
+<div class="wj-wrap wj-callus">
+    <h1 class="call-logo">
+        <img src="../images/wj-succ-icon.png"/>
+    </h1>
+    <p class="wj-call wj-weight">
+        <span  class="wj-green">登陆成功 </span>
+    </p>
+    <p class="wj-call wj-weight">
+        <span class="small-icon">需更改商户操作权限联系负责人更改</span>
+    </p>
+</div>
+    <div class="wj-btn">
+        <a href="javascript:void(0)" class="weui_btn weui_btn_primary wj-sub">完成</a>
+    </div>
+</body>
+</html>
