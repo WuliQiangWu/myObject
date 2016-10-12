@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html style="font-size: 100px">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript">
+        function setFontsize(){
+            document.documentElement.style.fontSize=window.innerWidth/320*100+'px'
+        }
+        setFontsize();
+        window.addEventListener('resize',setFontsize,false);
+    </script>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/index00.css" type="text/css"/>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="area-chose">
+            <span class="area-country" id="area-country">全国版</span>
+            <span class="area-local active" id="area-local">地方版</span>
+        </div>
+        <div class="swiper-container" id="o-c">
+            <div class="swiper-wrapper" >
+                <div class="swiper-slide item">
+
+                    <div class="wj-container page1">
+
+                        <div class="wj-sel">
+                            <select class="wj-sele">
+                                <option>安徽</option>
+                                <option>北京</option>
+                                <option>上海</option>
+                                <option>河南</option>
+                            </select>
+                            <a class="pos">
+                                <span>更换</span>省份
+                            </a>
+
+                        </div>
+                        <div class="wj-index-bg" style="width: 100%;height: 2.7rem;" >
+                            <div class="text-con">
+                                <p>商家为你的孩子投保后</p>
+                                <p>在孩子6周岁前填写投保信息</p>
+                                <div class="change">
+                                    <p class="red">孩子考上选定3-4所大学</p>
+                                </div>
+                                <p>将获得投保金额30倍的大学期间生活费、学费</p>
+                                <p class='red'>累计总额最高50万元</p>
+                                <p>中国人寿财险承保给付</p>
+                            </div>
+                            <a href="tel:400-86-95519">400-86-95519</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide item">
+                    <div class="wj-container page3">
+                        <div class="swiper-container i-c1">
+                            <div class="swiper-wrapper changewrap">
+                                <div class="swiper-slide stop" id="unvie" style="height: 9.71rem;">
+                                    <div class="wj-index-bg">
+                                        <img  src="images/content2-60suo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar1"></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1rem;">
+                            <img src="images/content5.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1.5rem">
+                            <img class="lazy" src="images/content6_1.png">
+                            <a id="clause1" ><img class="lazy" src="images/content6_2.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page3">
+                        <div class="swiper-container " id="i-c2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide stop" style="height:5.41rem;">
+                                    <div class="wj-index-bg" style="margin-top: 0">
+                                        <img src="images/content7.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item" >
+                    <div class="wj-container page3">
+                        <div class="swiper-container " id="i-c3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide stop" style="height:5.27rem;">
+                                    <div class="wj-index-bg"  style="margin-top: 0">
+                                        <img src="images/content8.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item">
+                    <div class="wj-container page2">
+                        <div class="wj-index-bg" style="margin-top: -1.5rem">
+                            <img src="images/content9.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrowdiv"></div>
+        </div>
+    </div>
+    <div id="clause"></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+<Script>
+   $(function(){
+       $('.area-chose span').click(function() {
+           iSwiper.update();
+           oSwiper.update();
+           $(this).addClass('active').siblings().removeClass('active');
+           $(this).children().addClass('active').parents().siblings().children().removeClass('active');
+           var str='';
+           if($('#area-country').hasClass('active')){
+               str='<p style="margin-top: 0.3rem">商家为你的孩子投保后</p>'+
+                   '<p>在孩子6周岁前填写投保信息</p>'+
+                   '<p class="red">孩子考上选定的60所大学</p>'+
+                   '<p>将获得投保金额30倍的大学期间生活费、学费</p>'+
+                   '<p class="red">累计总额最高50万元</p>'+
+                   '<p>中国人寿财险承保给付</p>';
+               $('.text-con').html(str);
+               $('.wj-sel').css('display','none');
+               $('#unvie img').attr('src','images/content2-2x.png');
+               $('#unvie').css('height','11.69rem');
+               iSwiper.update();
+               oSwiper.update();
+               oSwiper.slideTo(0,0,false);
+               top.postMessage('全国','http://192.168.1.110:3000/');
+           }
+           else if($('#area-local').hasClass('active')){
+               str='<p>商家为你的孩子投保后</p>'+
+                   '<p>在孩子6周岁前填写投保信息</p>'+
+                   '<div class="change">'+
+                        '<p class="red">孩子考上选定3-4所大学</p>'+
+                   '</div>'+
+                   '<p>将获得投保金额30倍的大学期间生活费、学费</p>'+
+                   '<p class="red">累计总额最高50万元</p>'+
+                   '<p>中国人寿财险承保给付</p>';
+               $('.text-con').html(str);
+               $('.wj-sel').css('display','block');
+               $('#unvie img').attr('src','images/content2-60suo.png');
+               $('#unvie').css('height','9.71rem');
+               iSwiper.update();
+               oSwiper.update();
+               oSwiper.slideTo(0,0,false);
+               if($('.wj-sele').find("option:selected")){
+                   var checkText=$('.wj-sele').find("option:selected").text();
+                   $('.area-local').text(checkText+'版');
+                   var string='<p>孩子考上</p>'+
+                           '<p class="red">清华大学</p>'+
+                           '<p class="red">北京大学</p>'+
+                           '<p class="red">XXXX大学</p>'+
+                           '<p class="red">XXXX大学</p>';
+                   $('.change').html(string);
+                   top.postMessage(checkText,'http://192.168.1.110:3000/');
+               }
+           }
+       });
+
+    $('.wj-sele').on('change',function(){
+        var checkText=$('.wj-sele').find("option:selected").text();
+        $('.area-local').text(checkText+'版');
+        var string='<p>孩子考上</p>'+
+                    '<p class="red">清华大学</p>'+
+                    '<p class="red">北京大学</p>'+
+                    '<p class="red">XXXX大学</p>'+
+                    '<p class="red">XXXX大学</p>';
+        $('.change').html(string);
+        top.postMessage(checkText,'http://192.168.1.110:3000/');
+    });
+
+       var $slide=$('.item');
+       var n=1/($slide.length-1);
+       var index=0;
+       var toScale=function(){};
+       var oSwiper = new Swiper('#o-c', {
+           speed:600,
+           spaceBetween:0,
+           pagination: '.swiper-pagination',
+           direction: 'vertical',
+           loop: false,
+           nextButton: '.arrowdiv',
+           watchSlidesProgress: true,
+           onProgress: function(swiper,progress) {
+               var p=(progress-n*index)/n;
+               if(p<=1&&p>=0){
+                    $slide.eq(index).children().css({
+                        '-webkit-transform':'scale('+(1-p)+')',
+                        'transform':'scale('+(1-p)+')',
+                        '-webkit-transform-origin':'center bottom',
+                        'transform-rigin':'center bottom',
+                        '-webkit-transition':''
+                    });
+               }else if(p<0){
+                    $slide.eq(index).children().css({
+                        '-webkit-transform':'scale('+(1+p)+')',
+                        'transform':'scale('+(1+p)+')',
+                        '-webkit-transform-origin':'center bottom',
+                        'transform-origin':'center top',
+                        '-webkit-transition':''
+                    });
+               }
+               if(Math.abs(p)>0.5){
+                   toScale=function(){
+                       $slide.eq(index).children().css({
+                           '-webkit-transform':'scale(0)',
+                           '-webkit-transition':'-webkit-transform 0.6S'
+                       });
+                   }
+               }else {
+                   toScale=function(){};
+               }
+           },
+           onTransitionEnd:function(swiper){
+               $slide.eq(index).children().css('transform','scale(1)');
+               index=swiper.activeIndex;
+           },
+           onTransitionStart:function(swiper,event){
+               toScale();
+           }
+       });
+       var iSwiper = new Swiper('.i-c1',{
+           scrollbar: '.swiper-scrollbar1',
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+       });
+       var aSwiper = new Swiper('#i-c2',{
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+       });
+       var xSwiper = new Swiper('#i-c3',{
+           direction: 'vertical',
+           slidesPerView: 'auto',
+           mousewheelControl: true,
+           freeMode: true,
+           nested:true,
+           resistance:true,
+           resistanceRatio:0
+       });
+//       top.addEventListener('message',function(event){
+//          console.log(event.data);
+//       });
+   })
+
+
+</Script>
+</body>
+</html>
